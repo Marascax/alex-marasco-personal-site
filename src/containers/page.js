@@ -12,7 +12,7 @@ const Page = props => {
     console.log(`Page ${props.pageId}: ${isVisible ? 'visible' : 'not visible'}`);
 
     return (
-        <div ref={elementRef} className='Page'>
+        <div ref={elementRef} className='Page' id={props.pageId}>
             Page {isVisible && props.pageId ? props.pageId : ""}
         </div>
     )
