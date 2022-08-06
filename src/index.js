@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './index.scss';
+import App from './containers/App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootElem = document.getElementById('root');
+rootElem.style.width = '100%';
+rootElem.style.height = '100%';
+
+const root = ReactDOM.createRoot(rootElem);
 root.render(
   <React.StrictMode>
     <App />
