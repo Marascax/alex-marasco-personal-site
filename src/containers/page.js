@@ -9,9 +9,9 @@ const Page = props => {
     const context = useAppContext();
 
     const elementRef = useRef(null);
-    const isVisible = useIsVisible(elementRef, props.pageId);
+    const isVisible = useIsVisible(elementRef, props.id);
 
-    const pageId = props.pageId;
+    const pageId = props.id;
 
     useEffect(() => {
         if (isVisible) {
@@ -19,7 +19,7 @@ const Page = props => {
         }
     }, [isVisible])
 
-    console.log(`Page ${props.pageId}: ${isVisible ? 'visible' : 'not visible'}`);
+    console.log(`Page ${pageId}: ${isVisible ? 'visible' : 'not visible'}`);
 
     return (
         <div ref={elementRef} className='Page' id={pageId}>

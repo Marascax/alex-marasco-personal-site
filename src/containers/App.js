@@ -8,9 +8,9 @@ function App() {
     return (
         <AppContextWrapper>
             <div className="App">
-                <Page pageId='page1'/>
-                <Page pageId='page2'/>
-                <Page pageId='page3'/>
+                <Page id='page1'/>
+                <Page id='page2'/>
+                <Page id='page3'/>
             </div>
         </AppContextWrapper>
     );
