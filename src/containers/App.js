@@ -2,7 +2,6 @@
 import Page from './page';
 
 import './App.scss';
-import { useEffect } from 'react';
 
 function App() {
 
@@ -10,7 +9,7 @@ function App() {
         const section = document.querySelector(selector);
         section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
     };
-    
+
     return (
         <div className="App">
             <Page pageId='page1'/>
