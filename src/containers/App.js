@@ -5,11 +5,6 @@ import './App.scss';
 
 function App() {
 
-    const scroll = (selector) => {
-        const section = document.querySelector(selector);
-        section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-    };
-
     return (
         <AppContextWrapper>
             <div className="App">
