@@ -4,8 +4,8 @@ const OPTIONS = {
   root: null,
   rootMargin: "0px 0px 0px 0px",
   // 0 = execute whenever a targeted element becomes completely obscured or first starts to become unobscured
-  // 0.25, 0.75 = passes through 25% or 75% visible in either direction
-  threshold: [0.0, 0.25, 0.75],
+  // 0.1, 0.9 = passes through 10% or 90% visible in either direction
+  threshold: [0.0, 0.1, 0.9],
 };
 
 // element reference, optional ID to use when logging
@@ -18,10 +18,10 @@ const useIsVisible = (elementRef, elementId = null) => {
                 entries.forEach((entry) => {
 
                     console.log(`[useIsVisible/useEffect] ${!!elementId ? `Element ${elementId} Intersect: ` : ''} ${entry.intersectionRatio}`);
-                    
+
                     if (entry.isIntersecting) {
                         // only show set to visible if >25% visible
-                        setIsVisible(entry.intersectionRatio >= 0.25);
+                        setIsVisible(entry.intersectionRatio >= 0.1);
                         //observer.unobserve(elementRef.current);
                     }
                 });
