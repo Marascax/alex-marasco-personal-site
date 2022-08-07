@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import Page from './page';
 import { useAppContext } from '../lib/appContext';
-import { disableScroll } from '../lib/scroll';
+import { getSessionStorageItem, setSessionStorageItem } from '../lib/sessionStorage';
 
 import './App.scss';
 
@@ -13,12 +13,16 @@ function App() {
     const pages = ['page1', 'page2', 'page3'];
     let currentPageIndex;
 
+    const updatePageSessionStorage = () => setSessionStorageItem('currentPage', currentPageIndex);
+
     const scrollUp = () => {
         context.scroll(`#${pages[--currentPageIndex]}`);
+        updatePageSessionStorage();
     }
 
     const scrollDown = () => {
         context.scroll(`#${pages[++currentPageIndex]}`);
+        updatePageSessionStorage();
     }
 
     const wheelHandler = e => {
@@ -43,11 +47,11 @@ function App() {
 
         // get the sessionstorage for the current page index
         // + to convert into number
-        currentPageIndex = +window.sessionStorage.getItem('currentPage');
+        currentPageIndex = +getSessionStorageItem('currentPage')
         // if null, set and save 0
         if (!currentPageIndex) {
-            currentPageIndex = 1;
-            window.sessionStorage.setItem('currentPage', '0')
+            currentPageIndex = 0;
+            updatePageSessionStorage();
         }
         // scroll to current page
         context.scroll(`#${pages[currentPageIndex]}`);
