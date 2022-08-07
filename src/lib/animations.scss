@@ -1,0 +1,26 @@
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+} 
+
+@mixin SlideHorizontal($start, $name) {
+
+    @include keyframes($name) {
+        0% {
+            transform: translateX($start);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+}

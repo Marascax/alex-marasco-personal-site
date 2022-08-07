@@ -1,4 +1,8 @@
 @use '../basePage';
+@use 'src/lib/animations' as *;
+
+@include SlideHorizontal(300%, SlideLeft);
+@include SlideHorizontal(-300%, SlideRight);
 
 .MainPage {
     width: 100%;
@@ -17,7 +21,7 @@
         justify-content: center; // center horizontally
         align-items: center; // center vertically
 
-        //overflow-y: hidden;
+        overflow: hidden;
 
         // left side image
         .SelfImage {
@@ -52,6 +56,8 @@
             color: white;
             font-family: 'Roboto';
 
+            overflow: hidden;
+
             p {
                 width: 100%;
                 font-size: 3em;
@@ -60,6 +66,8 @@
                 text-align: left;
 
                 margin: 0;
+
+                animation: SlideRight 0.5s linear;
             }
     
             h1 {
@@ -67,6 +75,8 @@
                 text-transform: uppercase;
 
                 margin: 0;
+
+                animation: SlideLeft 0.5s linear;
             }
         }
 
