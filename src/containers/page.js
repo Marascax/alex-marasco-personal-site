@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-import { useAppContext } from '../lib/appContext';
 import useIsVisible from '../lib/hooks/useIsVisible';
+import Loading from '../components/loading';
+import { useAppContext } from '../lib/appContext';
 
 import './page.scss';
 
@@ -15,9 +16,25 @@ const Page = props => {
 
     console.log(`Page ${pageId}: ${isVisible ? 'visible' : 'not visible'}`);
 
+    // element with loading screen
+    let loadingElem = (
+        <div className='Loader'>
+            <Loading/>
+        </div>
+    );
+
+    // decide what content to show
+    let content = null;
+    // only show stuff if visible in the first place
+    if (isVisible)
+        // if there are children show them, if not show loading placeholder
+        content = !!props.children ? props.children : loadingElem;
+
     return (
         <div ref={elementRef} className='Page' id={pageId}>
-            {isVisible && props.children ? props.children : pageId}
+
+            { content }
+    
         </div>
     )
 }
