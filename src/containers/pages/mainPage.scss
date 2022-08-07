@@ -4,6 +4,18 @@
 @include SlideHorizontal(300%, SlideLeft); // h1 welcome text animation
 @include SlideHorizontal(-300%, SlideRight); // p welcome text animation
 
+@include keyframes(ArrowBounce) {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 .MainPage {
     width: 100%;
     height: 100%;
@@ -90,6 +102,10 @@
 
                 svg {
                     cursor: pointer;
+
+                    &:hover {
+                        animation: ArrowBounce 1s ease-in-out infinite;
+                    }
                 }
                 
             }
