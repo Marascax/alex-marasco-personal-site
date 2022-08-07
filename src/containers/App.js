@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import Page from './page';
+import MainPage from './pages/mainPage';
 import { useAppContext } from '../lib/appContext';
 import { getSessionStorageItem, setSessionStorageItem } from '../lib/sessionStorage';
 
@@ -64,7 +65,9 @@ function App() {
 
     return (
         <div className="App" ref={appRef}>
-            <Page id='page1'/>
+            <Page id='page1'>
+                <MainPage/>
+            </Page>
             <Page id='page2'/>
             <Page id='page3'/>
         </div>

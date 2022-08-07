@@ -17,7 +17,7 @@ const Page = props => {
 
     return (
         <div ref={elementRef} className='Page' id={pageId}>
-            {isVisible && pageId ? pageId : ""}
+            {isVisible && props.children ? props.children : pageId}
         </div>
     )
 }
