@@ -42,7 +42,7 @@
         .WelcomText {
             width: 50%;
             height: 100%;
-            text-align: center;
+            //text-align: center;
     
             display: flex;
             flex-direction: column;
@@ -53,13 +53,19 @@
             font-family: 'Roboto';
 
             p {
+                width: 100%;
                 font-size: 3em;
                 font-weight: 200;
+
+                text-align: left;
+
+                margin: 0;
             }
     
             h1 {
                 font-size: 3.5em;
                 text-transform: uppercase;
+
                 margin: 0;
             }
         }
