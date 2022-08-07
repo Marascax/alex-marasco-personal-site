@@ -20,7 +20,7 @@ const useIsVisible = (elementRef, elementId = null) => {
                     console.log(`[useIsVisible/useEffect] ${!!elementId ? `Element ${elementId} Intersect: ` : ''} ${entry.intersectionRatio}`);
 
                     if (entry.isIntersecting) {
-                        // only show set to visible if >25% visible
+                        // only show set to visible if >10% visible
                         setIsVisible(entry.intersectionRatio >= 0.1);
                         //observer.unobserve(elementRef.current);
                     }

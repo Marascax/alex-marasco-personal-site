@@ -24,11 +24,11 @@ const Page = props => {
     );
 
     // decide what content to show
-    let content = null;
+    let content = loadingElem;
     // only show stuff if visible in the first place
-    if (isVisible)
+    if (isVisible && !!props.children)
         // if there are children show them, if not show loading placeholder
-        content = !!props.children ? props.children : loadingElem;
+        content = props.children;
 
     return (
         <div ref={elementRef} className='Page' id={pageId}>
