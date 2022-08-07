@@ -1,17 +1,8 @@
-const preventDefault = e => {
-    e = e || window.event
-    if (e.preventDefault) {
-      e.preventDefault()
-    }
-    e.returnValue = false
-}
 
 export const enableScroll = () => {
-    document.removeEventListener('wheel', preventDefault, false)
+    document.body.style.overflow = 'auto';
 }
 
 export const disableScroll = () => {
-    document.addEventListener('wheel', preventDefault, {
-        passive: false,
-    })
+    document.body.style.overflow = 'hidden';
 }
