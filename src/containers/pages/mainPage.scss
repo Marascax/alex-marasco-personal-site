@@ -7,6 +7,7 @@
     background-color: transparent;
 
     display: flex;
+    flex-direction: column;
 
     .Header {
         width: 100%;
@@ -24,6 +25,31 @@
             font-family: 'Roboto';
             text-transform: uppercase;
             margin: 0;
+        }
+    }
+
+    .MainContent {
+        width: 100%;
+        height: 90%;
+
+        display: flex;
+        justify-content: center; // center horizontally
+        align-items: center; // center vertically
+
+        overflow-y: hidden;
+
+        .SelfImage {
+            width: 50%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                // replaced content is scaled to maintain its aspect ratio while fitting within the element's content box
+                // The entire object is made to fill the box, while preserving its aspect ratio
+                object-fit: contain;
+            }
         }
     }
 
