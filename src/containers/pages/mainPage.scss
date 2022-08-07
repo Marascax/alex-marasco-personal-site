@@ -1,8 +1,8 @@
 @use '../basePage';
 @use 'src/lib/animations' as *;
 
-@include SlideHorizontal(300%, SlideLeft);
-@include SlideHorizontal(-300%, SlideRight);
+@include SlideHorizontal(300%, SlideLeft); // h1 welcome text animation
+@include SlideHorizontal(-300%, SlideRight); // p welcome text animation
 
 .MainPage {
     width: 100%;
@@ -77,6 +77,21 @@
                 margin: 0;
 
                 animation: SlideLeft 0.5s linear;
+            }
+
+            .DownArrow {
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+
+                padding-top: 2%;
+
+                svg {
+                    cursor: pointer;
+                }
+                
             }
         }
 

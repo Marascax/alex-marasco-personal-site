@@ -1,4 +1,5 @@
 // opening page that shows up at start
+import DownArrow from '../../components/downArrow';
 
 import './mainPage.scss';
 
@@ -16,6 +17,11 @@ const MainPage = props => {
                 <div className="WelcomText">
                     <p>Welcome to the Personal Site of</p>
                     <h1>Alexander Marasco</h1>
+                    
+                    <div className='DownArrow'>
+                        <DownArrow width="100"/>
+                    </div>
+                    
                 </div>
                 
             </div>
