@@ -39,12 +39,20 @@
             text-align: center;
     
             display: flex;
+            flex-direction: column;
             justify-content: center; // center horizontally
             align-items: center; // center vertically
+
+            color: white;
+            font-family: 'Roboto';
+
+            p {
+                font-size: 3em;
+                font-weight: 200;
+            }
     
             h1 {
-                color: white;
-                font-family: 'Roboto';
+                font-size: 3.5em;
                 text-transform: uppercase;
                 margin: 0;
             }
