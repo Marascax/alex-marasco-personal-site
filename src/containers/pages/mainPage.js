@@ -10,7 +10,7 @@ const MainPage = props => {
             <div className="MainContent">
 
                 <div className="SelfImage">
-                    <img src="images/Alex_Marasco-Crop.png"/>
+                    <img src="images/Alex_Marasco.jpg"/>
                 </div>
 
                 <div className="WelcomText">
