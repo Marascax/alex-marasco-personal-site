@@ -9,28 +9,9 @@
     display: flex;
     flex-direction: column;
 
-    .Header {
-        width: 100%;
-        height: 10%;
-
-        background-color: transparent;
-        text-align: center;
-
-        display: flex;
-        justify-content: center; // center horizontally
-        align-items: center; // center vertically
-
-        h1 {
-            color: white;
-            font-family: 'Roboto';
-            text-transform: uppercase;
-            margin: 0;
-        }
-    }
-
     .MainContent {
         width: 100%;
-        height: 90%;
+        height: 100%;
 
         display: flex;
         justify-content: center; // center horizontally
@@ -51,6 +32,24 @@
                 object-fit: contain;
             }
         }
+
+        .WelcomText {
+            width: 50%;
+            height: 100%;
+            text-align: center;
+    
+            display: flex;
+            justify-content: center; // center horizontally
+            align-items: center; // center vertically
+    
+            h1 {
+                color: white;
+                font-family: 'Roboto';
+                text-transform: uppercase;
+                margin: 0;
+            }
+        }
+
     }
 
 }
