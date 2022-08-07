@@ -13,12 +13,6 @@ const Page = props => {
 
     const pageId = props.id;
 
-    useEffect(() => {
-        if (isVisible) {
-            context.scroll(`#${pageId}`)
-        }
-    }, [isVisible])
-
     console.log(`Page ${pageId}: ${isVisible ? 'visible' : 'not visible'}`);
 
     return (

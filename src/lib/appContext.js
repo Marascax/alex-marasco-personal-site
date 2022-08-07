@@ -10,8 +10,6 @@ export function AppContextWrapper({children}) {
     const scroll = (selector) => {
         console.log(`scrolling to ${selector}`);
 
-        disableScroll();
-
         const element = document.querySelector(selector);
         const rect = element.getBoundingClientRect();
         const scrollTop = document.documentElement.scrollTop;
@@ -21,10 +19,6 @@ export function AppContextWrapper({children}) {
             top: absoluteY,
             behavior: "smooth"
         });
-
-        // element.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-
-        enableScroll();
     };
 
 

@@ -1,17 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+
 import App from './containers/App';
 import reportWebVitals from './reportWebVitals';
+import { AppContextWrapper } from './lib/appContext';
+import { disableScroll } from './lib/scroll';
+
+import './index.scss';
 
 const rootElem = document.getElementById('root');
 rootElem.style.width = '100%';
 rootElem.style.height = '100%';
 
 const root = ReactDOM.createRoot(rootElem);
+
+disableScroll();
+
 root.render(
   <React.StrictMode>
-    <App />
+    <AppContextWrapper>
+        <App />
+    </AppContextWrapper>
   </React.StrictMode>
 );
 
