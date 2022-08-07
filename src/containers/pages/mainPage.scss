@@ -1,4 +1,4 @@
-@use 'page';
+@use '../basePage';
 
 .MainPage {
     width: 100%;
@@ -8,12 +8,17 @@
 
     display: flex;
 
+    .Header {
+        width: 100%;
+        height: 10%;
+
+        background-color: transparent;
+        text-align: center;
+
+        color: white;
+        font-family: 'Roboto';
+        font-weight: 500;
+    }
+
 }
 
-.MainPage-Header {
-    width: 100%;
-    height: 10%;
-
-    background-color: transparent;
-
-}
