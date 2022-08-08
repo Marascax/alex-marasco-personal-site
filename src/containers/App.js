@@ -46,7 +46,13 @@ function App() {
 
     // when app mounts
     useEffect(() => {
-        appRef.current.addEventListener('wheel', wheelHandler, { passive: false });
+
+        let currentRef = null;
+
+        if (appRef.current) {
+            currentRef = appRef.current;
+            currentRef.addEventListener('wheel', wheelHandler, { passive: false });
+        }
 
         // get the sessionstorage for the current page index
         // + to convert into number
@@ -61,7 +67,8 @@ function App() {
 
         // when app unmounts
         return () => {
-            appRef.current.removeEventListener('wheel', wheelHandler, { passive: false });
+            if (currentRef)
+                currentRef.removeEventListener('wheel', wheelHandler, { passive: false });
         }
     }, []);
 
