@@ -14,7 +14,7 @@ function App() {
 
     const pages = ['page1', 'page2', 'page3'];
 
-    const updatePageSessionStorage = () => setSessionStorageItem('currentPage', currPageIndex.current);
+    const updatePageSessionStorage = () => context.setCurrentPage(currPageIndex.current);
 
     const scrollUp = () => {
         context.scrollTo(`#${pages[--currPageIndex.current]}`);
@@ -29,7 +29,7 @@ function App() {
     const wheelHandler = e => {
         e.preventDefault();
 
-        currPageIndex.current = +getSessionStorageItem('currentPage');
+        currPageIndex.current = context.getCurrentPage();
 
         if (e.deltaY < 0) { // scroll up
             // can't scroll up any farther if at top page
@@ -46,7 +46,7 @@ function App() {
 
     // when app mounts
     useEffect(() => {
-
+        // once mounted get app element and add wheel handler
         let currentRef = null;
 
         if (appRef.current) {
@@ -54,14 +54,11 @@ function App() {
             currentRef.addEventListener('wheel', wheelHandler, { passive: false });
         }
 
-        // get the sessionstorage for the current page index
-        // + to convert into number
-        currPageIndex.current = +getSessionStorageItem('currentPage')
-        // if null, set and save 0
-        if (!currPageIndex.current) {
-            currPageIndex.current = 0;
-            updatePageSessionStorage();
-        }
+        // add the current pages to our context
+        context.updatePages(pages);
+
+        currPageIndex.current = context.getCurrentPage();
+
         // scroll to current page
         context.scrollTo(`#${pages[currPageIndex.current]}`);
 

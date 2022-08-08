@@ -29,7 +29,21 @@ export function AppContextWrapper({children}) {
     const addPage = page => setPages(pages.concat(page));
 
     // filter returns new array without page
-    const removePage = page => setPages(pages.filter(p => p !== page))
+    const removePage = page => setPages(pages.filter(p => p !== page));
+
+    const getCurrentPage = () => {
+        // get the sessionstorage for the current page index
+        // + to convert into number
+        let currPage = +getSessionStorageItem('currentPage');
+        // if no current page set, set and save 0
+        if (!currPage) {
+            currPage = 0;
+            setSessionStorageItem('currentPage', '0');
+        }
+        return currPage;
+    }
+
+    const setCurrentPage = currPage => setSessionStorageItem('currentPage', currPage);
 
 
     let state = {
@@ -37,7 +51,9 @@ export function AppContextWrapper({children}) {
         scrollTo,
         updatePages,
         addPage,
-        removePage
+        removePage,
+        getCurrentPage,
+        setCurrentPage
     };
 
     return (
