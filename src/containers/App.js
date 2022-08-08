@@ -10,35 +10,35 @@ import './App.scss';
 function App() {
     const context = useAppContext();
     const appRef = useRef(null);
+    const currPageIndex = useRef(0);
 
     const pages = ['page1', 'page2', 'page3'];
-    let currentPageIndex;
 
-    const updatePageSessionStorage = () => setSessionStorageItem('currentPage', currentPageIndex);
+    const updatePageSessionStorage = () => setSessionStorageItem('currentPage', currPageIndex.current);
 
     const scrollUp = () => {
-        context.scrollTo(`#${pages[--currentPageIndex]}`);
+        context.scrollTo(`#${pages[--currPageIndex.current]}`);
         updatePageSessionStorage();
     }
 
     const scrollDown = () => {
-        context.scrollTo(`#${pages[++currentPageIndex]}`);
+        context.scrollTo(`#${pages[++currPageIndex.current]}`);
         updatePageSessionStorage();
     }
 
     const wheelHandler = e => {
         e.preventDefault();
 
-        currentPageIndex = +getSessionStorageItem('currentPage');
+        currPageIndex.current = +getSessionStorageItem('currentPage');
 
         if (e.deltaY < 0) { // scroll up
             // can't scroll up any farther if at top page
-            if (currentPageIndex > 0) {
+            if (currPageIndex.current > 0) {
                 scrollUp();
             }
         } else if (e.deltaY > 0) { // scroll down
             // cant scroll down if at bottom page
-            if (currentPageIndex !== pages.length - 1) {
+            if (currPageIndex.current !== pages.length - 1) {
                 scrollDown();
             }
         }
@@ -56,14 +56,14 @@ function App() {
 
         // get the sessionstorage for the current page index
         // + to convert into number
-        currentPageIndex = +getSessionStorageItem('currentPage')
+        currPageIndex.current = +getSessionStorageItem('currentPage')
         // if null, set and save 0
-        if (!currentPageIndex) {
-            currentPageIndex = 0;
+        if (!currPageIndex.current) {
+            currPageIndex.current = 0;
             updatePageSessionStorage();
         }
         // scroll to current page
-        context.scrollTo(`#${pages[currentPageIndex]}`);
+        context.scrollTo(`#${pages[currPageIndex.current]}`);
 
         // when app unmounts
         return () => {
