@@ -10,56 +10,63 @@ import './App.scss';
 function App() {
     const context = useAppContext();
     const appRef = useRef(null);
+    const currPageIndex = useRef(0);
 
     const pages = ['page1', 'page2', 'page3'];
-    let currentPageIndex;
 
-    const updatePageSessionStorage = () => setSessionStorageItem('currentPage', currentPageIndex);
+    // const updatePageSessionStorage = () => context.setCurrentPage(currPageIndex.current);
 
-    const scrollUp = () => {
-        context.scroll(`#${pages[--currentPageIndex]}`);
-        updatePageSessionStorage();
-    }
+    // const scrollUp = () => {
+    //     context.scrollTo(`#${pages[--currPageIndex.current]}`);
+    //     updatePageSessionStorage();
+    // }
 
-    const scrollDown = () => {
-        context.scroll(`#${pages[++currentPageIndex]}`);
-        updatePageSessionStorage();
-    }
+    // const scrollDown = () => {
+    //     context.scrollTo(`#${pages[++currPageIndex.current]}`);
+    //     updatePageSessionStorage();
+    // }
 
     const wheelHandler = e => {
         e.preventDefault();
 
+        currPageIndex.current = context.getCurrentPage();
+
         if (e.deltaY < 0) { // scroll up
             // can't scroll up any farther if at top page
-            if (currentPageIndex > 0) {
-                scrollUp();
+            if (currPageIndex.current > 0) {
+                context.scrollUp();
             }
         } else if (e.deltaY > 0) { // scroll down
             // cant scroll down if at bottom page
-            if (currentPageIndex != pages.length - 1) {
-                scrollDown();
+            if (currPageIndex.current !== pages.length - 1) {
+                context.scrollDown();
             }
         }
     }
 
     // when app mounts
     useEffect(() => {
-        appRef.current.addEventListener('wheel', wheelHandler, { passive: false });
+        // once mounted get app element and add wheel handler
+        let currentRef = null;
 
-        // get the sessionstorage for the current page index
-        // + to convert into number
-        currentPageIndex = +getSessionStorageItem('currentPage')
-        // if null, set and save 0
-        if (!currentPageIndex) {
-            currentPageIndex = 0;
-            updatePageSessionStorage();
+        if (appRef.current) {
+            currentRef = appRef.current;
+            currentRef.addEventListener('wheel', wheelHandler, { passive: false });
         }
+
+        // add the current pages to our context
+        context.updatePages(pages);
+
+        currPageIndex.current = context.getCurrentPage();
+
         // scroll to current page
-        context.scroll(`#${pages[currentPageIndex]}`);
+        // context pages state may not have updated yet, so scroll to page with manual selector
+        context.scrollTo(`#${pages[currPageIndex.current]}`);
 
         // when app unmounts
         return () => {
-            appRef.current.removeEventListener('wheel', wheelHandler, { passive: false });
+            if (currentRef)
+                currentRef.removeEventListener('wheel', wheelHandler, { passive: false });
         }
     }, []);
 
