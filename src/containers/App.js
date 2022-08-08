@@ -17,17 +17,19 @@ function App() {
     const updatePageSessionStorage = () => setSessionStorageItem('currentPage', currentPageIndex);
 
     const scrollUp = () => {
-        context.scroll(`#${pages[--currentPageIndex]}`);
+        context.scrollTo(`#${pages[--currentPageIndex]}`);
         updatePageSessionStorage();
     }
 
     const scrollDown = () => {
-        context.scroll(`#${pages[++currentPageIndex]}`);
+        context.scrollTo(`#${pages[++currentPageIndex]}`);
         updatePageSessionStorage();
     }
 
     const wheelHandler = e => {
         e.preventDefault();
+
+        currentPageIndex = +getSessionStorageItem('currentPage');
 
         if (e.deltaY < 0) { // scroll up
             // can't scroll up any farther if at top page
@@ -36,7 +38,7 @@ function App() {
             }
         } else if (e.deltaY > 0) { // scroll down
             // cant scroll down if at bottom page
-            if (currentPageIndex != pages.length - 1) {
+            if (currentPageIndex !== pages.length - 1) {
                 scrollDown();
             }
         }
@@ -55,7 +57,7 @@ function App() {
             updatePageSessionStorage();
         }
         // scroll to current page
-        context.scroll(`#${pages[currentPageIndex]}`);
+        context.scrollTo(`#${pages[currentPageIndex]}`);
 
         // when app unmounts
         return () => {

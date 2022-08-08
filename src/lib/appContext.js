@@ -9,7 +9,7 @@ export function AppContextWrapper({children}) {
     // track pages in site
     const [pages, setPages] = useState([]);
 
-    const scroll = (selector) => {
+    const scrollTo = (selector) => {
         console.log(`scrolling to ${selector}`);
 
         const element = document.querySelector(selector);
@@ -29,12 +29,12 @@ export function AppContextWrapper({children}) {
     const addPage = page => setPages(pages.concat(page));
 
     // filter returns new array without page
-    const removePage = page => setPages(pages.filter(p => p != page))
+    const removePage = page => setPages(pages.filter(p => p !== page))
 
 
     let state = {
         loading,
-        scroll,
+        scrollTo,
         updatePages,
         addPage,
         removePage
