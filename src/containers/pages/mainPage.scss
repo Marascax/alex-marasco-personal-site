@@ -1,8 +1,21 @@
 @use '../basePage';
 @use 'src/lib/animations' as *;
 
-@include SlideHorizontal(300%, SlideLeft);
-@include SlideHorizontal(-300%, SlideRight);
+@include SlideHorizontal(300%, SlideLeft); // h1 welcome text animation
+@include SlideHorizontal(-300%, SlideRight); // p welcome text animation
+
+@include SlideVertical(-800%, SlideDown);
+@include keyframes(ArrowBounce) {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
 
 .MainPage {
     width: 100%;
@@ -77,6 +90,27 @@
                 margin: 0;
 
                 animation: SlideLeft 0.5s linear;
+            }
+
+            .DownArrow {
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+
+                padding-top: 2%;
+
+                animation: SlideDown 0.5s linear;
+
+                svg {
+                    cursor: pointer;
+
+                    &:hover {
+                        animation: ArrowBounce 1s ease-in-out infinite;
+                    }
+                }
+                
             }
         }
 
