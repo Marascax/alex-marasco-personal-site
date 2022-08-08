@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useRef } from 'react';
 
 import { setSessionStorageItem, getSessionStorageItem } from './sessionStorage';
 
@@ -7,7 +7,7 @@ const AppContext = createContext();
 export function AppContextWrapper({children}) {
     const [loading, setLoading] = useState(false);
     // track pages in site
-    const [pages, setPages] = useState([]);
+    const pages = useRef([]);
 
     const scrollTo = selector => {
         console.log(`[appContext/scrollTo] scrolling to ${selector}`);
@@ -24,7 +24,7 @@ export function AppContextWrapper({children}) {
     };
 
     const scrollToPage = pageIndex => {
-        const page = pages[pageIndex];
+        const page = pages.current[pageIndex];
 
         console.log(`[appContext/scrollToPage] Page: ${page}`);
 
@@ -45,13 +45,13 @@ export function AppContextWrapper({children}) {
         setCurrentPage(currPage);
     }
 
-    const updatePages = newPages => setPages(newPages);
+    const updatePages = newPages => pages.current = newPages;
 
     // concat returns new array without modifying pages, so update state works
-    const addPage = page => setPages(pages.concat(page));
+    const addPage = page => pages.current = pages.concat(page);
 
     // filter returns new array without page
-    const removePage = page => setPages(pages.filter(p => p !== page));
+    const removePage = page => pages.current = pages.filter(p => p !== page);
 
     const getCurrentPage = () => {
         // get the sessionstorage for the current page index
