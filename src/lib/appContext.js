@@ -1,11 +1,13 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 
-import { enableScroll, disableScroll } from './scroll';
+import { setSessionStorageItem, getSessionStorageItem } from './sessionStorage';
 
 const AppContext = createContext();
 
 export function AppContextWrapper({children}) {
     const [loading, setLoading] = useState(false);
+    // track pages in site
+    const [pages, setPages] = useState([]);
 
     const scroll = (selector) => {
         console.log(`scrolling to ${selector}`);
@@ -21,10 +23,21 @@ export function AppContextWrapper({children}) {
         });
     };
 
+    const updatePages = newPages => setPages(newPages);
+
+    // concat returns new array without modifying pages, so update state works
+    const addPage = page => setPages(pages.concat(page));
+
+    // filter returns new array without page
+    const removePage = page => setPages(pages.filter(p => p != page))
+
 
     let state = {
         loading,
-        scroll
+        scroll,
+        updatePages,
+        addPage,
+        removePage
     };
 
     return (
