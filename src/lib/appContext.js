@@ -9,8 +9,8 @@ export function AppContextWrapper({children}) {
     // track pages in site
     const [pages, setPages] = useState([]);
 
-    const scrollTo = (selector) => {
-        console.log(`scrolling to ${selector}`);
+    const scrollTo = selector => {
+        console.log(`[appContext/scrollTo] scrolling to ${selector}`);
 
         const element = document.querySelector(selector);
         const rect = element.getBoundingClientRect();
@@ -22,6 +22,28 @@ export function AppContextWrapper({children}) {
             behavior: "smooth"
         });
     };
+
+    const scrollToPage = pageIndex => {
+        const page = pages[pageIndex];
+
+        console.log(`[appContext/scrollToPage] Page: ${page}`);
+
+        scrollTo(`#${page}`);
+    }
+
+    // scroll up (left) a page
+    const scrollUp = () => {
+        let currPage = getCurrentPage();
+        scrollToPage(--currPage);
+        setCurrentPage(currPage);
+    }
+
+    // scroll down (right) a page
+    const scrollDown = () => {
+        let currPage = getCurrentPage();
+        scrollToPage(++currPage);
+        setCurrentPage(currPage);
+    }
 
     const updatePages = newPages => setPages(newPages);
 
@@ -49,6 +71,9 @@ export function AppContextWrapper({children}) {
     let state = {
         loading,
         scrollTo,
+        scrollToPage,
+        scrollUp,
+        scrollDown,
         updatePages,
         addPage,
         removePage,
