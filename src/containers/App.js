@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 import Page from './page';
 import MainPage from './pages/mainPage';
 import { useAppContext } from '../lib/appContext';
-import { getSessionStorageItem, setSessionStorageItem } from '../lib/sessionStorage';
 
 import './App.scss';
 

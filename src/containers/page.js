@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 import useIsVisible from '../lib/hooks/useIsVisible';
 import Loading from '../components/loading';

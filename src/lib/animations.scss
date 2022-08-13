@@ -1,3 +1,4 @@
+// sass mixin to account for different browser animations
 @mixin keyframes($name) {
     @-webkit-keyframes #{$name} {
         @content;
