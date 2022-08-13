@@ -1,7 +1,7 @@
 // opening page that shows up at start
-import DownArrow from '../../components/downArrow';
+import DownArrow from '../../../components/downArrow';
 
-import { useAppContext } from '../../lib/appContext';
+import { useAppContext } from '../../../lib/appContext';
 
 import './mainPage.scss';
 
