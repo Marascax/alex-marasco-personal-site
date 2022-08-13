@@ -11,7 +11,7 @@ function App() {
     const appRef = useRef(null);
     const currPageIndex = useRef(0);
 
-    const pages = ['page1', 'page2', 'page3'];
+    const pages = ['mainPage', 'page2', 'page3'];
 
     // const updatePageSessionStorage = () => context.setCurrentPage(currPageIndex.current);
 
@@ -71,7 +71,7 @@ function App() {
 
     return (
         <div className="App" ref={appRef}>
-            <Page id='page1'>
+            <Page id='mainPage'>
                 <MainPage/>
             </Page>
             <Page id='page2'/>
