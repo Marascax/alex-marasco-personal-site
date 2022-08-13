@@ -1,0 +1,39 @@
+// global breakpoints for different display sizes
+// values are default if variable isn't defined or its null
+$breakpoints: (
+    phone: 640px,
+    tablet: 748px,
+    desktop: 1024px
+) !default;
+
+// static expressions or media types
+$media-expressions: (
+    'screen': 'screen', // computer screens, tablets, smartphones
+    'print': 'print', // printers
+    'handheld': 'handheld', // non-smartphone, non-tablet handheld device
+
+    // static expression with logical disjunction (OR operator)
+    // e.g. (a), (b), (c) => a or b or c
+    'landscape': '(orientation: landscape)',
+    'portait': '(orientation: portrait)',
+    'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
+    'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)'
+) !default;
+
+// number to added/subtracted from each unit when declaring breakpoints with exclusive intervals
+// e.g. >1.0rem => 1.1rem
+$unit-intervals: (
+    'px': 1,
+    'em': 0.01,
+    'rem': 0.1,
+    '': 0
+) !default;
+
+// flag to indicate if support for media queries is available
+$media-support: true !default;
+
+// define which value in $breakpoints to use when media queries are not supported
+$no-media-breakpoint: 'desktop' !default;
+
+// allowed media expressions in $media-expressions that can be used in an expression when media queries are not supported
+$no-media-expressions: ('screen', 'portrait', 'landscrap') !default;
