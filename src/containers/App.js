@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import Page from './page';
-import MainPage from './pages/mainPage';
+import MainPage from './pages/mainPage/mainPage';
 import { useAppContext } from '../lib/appContext';
 
 import './App.scss';
