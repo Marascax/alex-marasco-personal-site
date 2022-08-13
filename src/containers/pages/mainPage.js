@@ -18,7 +18,7 @@ const MainPage = props => {
                     <img src="images/Alex_Marasco.jpg"/>
                 </div>
 
-                <div className="WelcomText">
+                <div className="WelcomeText">
                     <p>Welcome to the Personal Site of</p>
                     <h1>Alexander Marasco</h1>
                     
