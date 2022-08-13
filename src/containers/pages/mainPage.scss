@@ -1,5 +1,6 @@
 @use '../basePage';
 @use 'src/lib/styles/animations' as *;
+@use 'src/lib/styles/includeMedia' as *;
 
 @include SlideHorizontal(300%, SlideLeft); // h1 welcome text animation
 @include SlideHorizontal(-300%, SlideRight); // p welcome text animation
@@ -53,13 +54,12 @@
                 // The entire object is made to fill the box, while preserving its aspect ratio
                 object-fit: contain;
             }
-        }
+        } // SelfImage
 
         // right side text
         .WelcomText {
             width: 50%;
             height: 100%;
-            //text-align: center;
     
             display: flex;
             flex-direction: column;
@@ -71,9 +71,9 @@
 
             overflow: hidden;
 
-            p {
+            p { // 'welcome to the personal site of'
                 width: 100%;
-                font-size: 3em;
+                font-size: 3rem;
                 font-weight: 200;
 
                 text-align: left;
@@ -83,8 +83,8 @@
                 animation: SlideRight 0.5s linear;
             }
     
-            h1 {
-                font-size: 3.5em;
+            h1 { // 'ALEXANDER MARASCO'
+                font-size: 3.5rem;
                 text-transform: uppercase;
 
                 margin: 0;
@@ -112,9 +112,32 @@
                 }
                 
             }
+        } // WelcomeText
+
+    } // MainContent
+
+} // MainPage
+
+@include media('<desktop') {
+    .MainPage {
+        .MainContent {
+            // dont show image if not on desktop screen due to limited width
+            .SelfImage {
+                display: none;
+            }
+
+            // expand text to entire page
+            .WelcomText {
+                width: 100%;
+                height: 100%;
+
+                margin: 0.5%;
+
+                p { // have all text center align
+                    text-align: center;
+                }
+            }
         }
-
     }
-
 }
 
