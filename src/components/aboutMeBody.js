@@ -11,7 +11,14 @@ const AboutMeBody = props => {
             <p>
                 E-mail: <a href={`mailto:${pageData.contactInfo.email}`}>{pageData.contactInfo.email}</a>
             </p>
-            <p>Phone Number: {pageData.contactInfo.phoneNumber}</p>
+            <p>
+                Phone Number: {pageData.contactInfo.phoneNumber}
+            </p>
+            <p className='LinkedIn'>
+                <a href={pageData.contactInfo.linkedIn}>
+                    <img className='Icon' src='./images/linkedin-icon.webp' alt='LinkedIn Icon'/>
+                </a>
+            </p>
 
         </div>
     )
