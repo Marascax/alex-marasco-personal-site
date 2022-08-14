@@ -73,14 +73,23 @@
             font-weight: 500;
         }
 
-        .LinkedIn {
-            margin: 0;
+        .ContactInfo {
 
-            .Icon {
-                width: 2em;
-                height: 2em;
+            p {
+                margin-top: 0;
+            }
+
+            .LinkedIn {
+                margin: 0;
+
+                .Icon {
+                    width: 2em;
+                    height: 2em;
+                }
             }
         }
+
+        
 
         
     }
