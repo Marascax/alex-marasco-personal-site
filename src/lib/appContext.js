@@ -70,6 +70,7 @@ export function AppContextWrapper({children}) {
 
     let state = {
         loading,
+        setLoading,
         scrollTo,
         scrollToPage,
         scrollUp,
