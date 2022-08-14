@@ -28,9 +28,7 @@ const AboutMe = props => {
                 <h1>About Me</h1>
             </div>
 
-            <div className='MainContent'>
-                {content}
-            </div>
+            {content}
         </div>
     );
 }

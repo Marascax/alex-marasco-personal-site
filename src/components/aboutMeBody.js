@@ -3,7 +3,7 @@ const AboutMeBody = props => {
     const pageData = props.data;
 
     return (
-        <div>
+        <div className='MainContent'>
             
             <p>{pageData.text}</p>
 
