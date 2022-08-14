@@ -11,10 +11,10 @@ const AboutMeBody = props => {
 
                 <h2>Contact Information</h2>
                 <p>
-                    E-mail: <a href={`mailto:${pageData.contactInfo.email}`}>{pageData.contactInfo.email}</a>
+                    <a href={`mailto:${pageData.contactInfo.email}`}>{pageData.contactInfo.email}</a>
                 </p>
                 <p>
-                    Phone Number: {pageData.contactInfo.phoneNumber}
+                    <a href={`tel:+${pageData.contactInfo.phoneNumber}`}>{pageData.contactInfo.phoneNumber}</a>
                 </p>
                 <p className='LinkedIn'>
                     <a href={pageData.contactInfo.linkedIn}>
