@@ -8,19 +8,19 @@ import './aboutMe.scss';
 const AboutMe = props => {
 
     const context = useAppContext();
-    const [pageText, setPageText] = useState(null);
+    const [pageJson, setPageJson] = useState(null);
 
-    let content = !pageText ? <Loading/> : <p>{pageText}</p>;
+    let content = !pageJson ? <Loading/> : <p>{pageJson.text}</p>;
 
-    if (!pageText) { // if page text hasn't been loaded
-        // fetch the doc with the text
-        fetch('./data/AboutMe.txt')
-            .then(response => response.text())
-            .then(text => {
-                setPageText(text);
+    if (!pageJson) { // if page json hasn't been loaded
+        // fetch the doc
+        fetch('./data/AboutMe.json')
+            .then(response => response.json())
+            .then(json => {
+                setPageJson(json);
             });
     }
-
+    
     return (
         <div className='AboutMe'>
             <div className='Header'>
