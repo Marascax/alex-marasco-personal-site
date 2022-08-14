@@ -1,7 +1,7 @@
 {
     "text": "Hello! My name is Alexander Marasco, I am a software engineer/developer that enjoys creating technological solutions. I have experience with solo development in my free time and developing larger solutions in teams of various sizes. I have interests in any kind of development, where it be for web, desktop, mobile, or anything in between. This website is a way for me to quickly showcase some of that interest, as well as to make it more interesting for someone to learn more about me.",
     "contactInfo": {
-        "E-mail": "alexmarasco13@gmail.com",
-        "Phone Number": "703-888-7253"
+        "email": "alexmarasco13@gmail.com",
+        "phoneNumber": "703-888-7253"
     }
 }
