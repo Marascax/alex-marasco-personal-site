@@ -44,6 +44,44 @@
                 "name": "Next.js",
                 "icon": "https://www.openxcell.com/wp-content/uploads/2021/11/dango-inner-2.png"
             }
+        ],
+        "tools": [
+            {
+                "name": "Git",
+                "icon": "https://cdn.iconscout.com/icon/free/png-256/git-225996.png"
+            },
+            {
+                "name": "AWS",
+                "icon": "https://cdn.iconscout.com/icon/free/png-256/aws-1869025-1583149.png"
+            },
+            {
+                "name": "Jira",
+                "icon": "https://cdn.icon-icons.com/icons2/2699/PNG/512/atlassian_jira_logo_icon_170511.png"
+            },
+            {
+                "name": "Linux",
+                "icon": "https://cdn-icons-png.flaticon.com/512/6124/6124995.png"
+            },
+            {
+                "name": "JUnit",
+                "icon": "https://avatars.githubusercontent.com/u/874086?s=280&v=4"
+            },
+            {
+                "name": "SQL Server",
+                "icon": "https://img.icons8.com/color/480/microsoft-sql-server.png"
+            },
+            {
+                "name": "MySQL",
+                "icon": "https://cdn-icons-png.flaticon.com/512/528/528260.png"
+            },
+            {
+                "name": "Visual Studio",
+                "icon": "https://iconarchive.com/download/i98390/dakirby309/simply-styled/Microsoft-Visual-Studio.ico"
+            },
+            {
+                "name": "VSCode",
+                "icon": "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png"
+            }
         ]
     },
     "contactInfo": {

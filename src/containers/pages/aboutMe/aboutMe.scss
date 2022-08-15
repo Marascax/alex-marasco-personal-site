@@ -87,9 +87,11 @@
             flex-grow: 1;
 
             .TechnicalSkills {
-                flex-grow: 1;
+                width: 80%;
 
                 .TextIconList {
+                    flex-basis: 100%;
+
                     display: flex;
                     flex-wrap: wrap;
                 }
@@ -97,6 +99,8 @@
                 .TextIcon {
                     display: flex;
                     align-items: center;
+
+                    white-space: nowrap;
 
                     margin-bottom: 2%;
                     margin-right: 3%;
@@ -116,10 +120,13 @@
             }
 
             .ContactInfo {
-
+                width: 20%;
+                
                 margin-left: 1%;
 
                 p {
+                    font-size: 1.5rem;
+
                     margin-top: 0;
                 }
 

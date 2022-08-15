@@ -17,6 +17,12 @@ const AboutMeBody = props => {
         </div>
     ));
 
+    let tools = technicalSkills.tools.map((tool, index) => (
+        <div className="TextIcon" key={index}>
+            <span className='TextName'>{tool.name}</span><img className="TextIcon" src={tool.icon} alt={tool.name}/>
+        </div>
+    ));
+
     return (
         <div className='MainContent'>
             
@@ -39,6 +45,9 @@ const AboutMeBody = props => {
                     </div>
 
                     <h2>Tools</h2>
+                    <div className="TextIconList">
+                        {tools}
+                    </div>
 
                 </div>
 
