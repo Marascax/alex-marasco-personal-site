@@ -1,5 +1,37 @@
 {
     "text": "Hello! My name is Alexander Marasco, I am a Computer Science graduate and software engineer/developer that enjoys creating technological solutions. I am a self-motivated contributer and leader with a wide range of technical experience. I have the knowledge to work full stack within an agile development team or on my own. Along with my knowledge includes soft skills in communicating solutions to customers and business-side leaders. I have interests in any kind of development, where it be for web, desktop, mobile, or anything in between. This website is a way for me to quickly showcase some of that interest, as well as to make it more interesting for someone to learn more about me.",
+    "technicalSkills": {
+        "languages": [
+            {
+                "name": "Java",
+                "icon": "https://cdn.iconscout.com/icon/free/png-256/java-60-1174953.png"
+            },
+            {
+                "name": "Android",
+                "icon": "https://cdn2.iconfinder.com/data/icons/metro-uinvert-dock/256/OS_Android.png"
+            },
+            {
+                "name": "Python",
+                "icon": "https://cdn.iconscout.com/icon/free/png-256/python-3521655-2945099.png"
+            },
+            {
+                "name": "JavaScript",
+                "icon": "https://icons-for-free.com/download-icon-command+develop+javascript+language+programming+software+icon-1320165727225308896_256.png"
+            },
+            {
+                "name": "SQL",
+                "icon": "https://cdn-icons-png.flaticon.com/128/2306/2306173.png"
+            },
+            {
+                "name": "C#",
+                "icon": "https://cdn.iconscout.com/icon/free/png-256/csharp-1-1175241.png"
+            },
+            {
+                "name": "C",
+                "icon": "https://img.icons8.com/color/480/c-programming.png"
+            }
+        ]
+    },
     "contactInfo": {
         "email": "alexmarasco13@gmail.com",
         "phoneNumber": "703-888-7253",

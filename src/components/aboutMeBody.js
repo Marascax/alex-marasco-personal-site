@@ -2,6 +2,14 @@
 const AboutMeBody = props => {
     const pageData = props.data;
 
+    const technicalSkills = pageData.technicalSkills;
+    // show icon with each language name
+    let languages = technicalSkills.languages.map((language, index) => (
+        <div className="TextIcon" key={index}>
+            <span className='TextName'>{language.name}</span><img className="TextIcon" src={language.icon} alt={language.name}/>
+        </div>
+    ));
+
     return (
         <div className='MainContent'>
             
@@ -12,6 +20,10 @@ const AboutMeBody = props => {
                 <div className='TechnicalSkills'>
 
                     <h2>Languages</h2>
+
+                    <div className='Languages'>
+                        {languages}
+                    </div>
 
                     <h2>Tools</h2>
 
@@ -28,7 +40,7 @@ const AboutMeBody = props => {
                     <p>
                         <a href={`tel:+${pageData.contactInfo.phoneNumber}`}>{pageData.contactInfo.phoneNumber}</a>
                     </p>
-                    
+
                     <p className='LinkedIn'>
                         <a href={pageData.contactInfo.linkedIn}>
                             <img className='Icon' src='./images/linkedin-icon.webp' alt='LinkedIn Icon'/>

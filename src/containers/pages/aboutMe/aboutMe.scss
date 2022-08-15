@@ -73,6 +73,11 @@
             font-weight: 500;
         }
 
+        .Icon {
+            width: 2em;
+            height: 2em;
+        }
+
         .BottomHalf {
 
             width: 100%;
@@ -83,6 +88,31 @@
 
             .TechnicalSkills {
                 flex-grow: 1;
+
+                .Languages {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                .TextIcon {
+                    display: flex;
+                    align-items: center;
+
+                    margin-bottom: 2%;
+                    margin-right: 3%;
+
+                    font-size: 1.75rem;
+                    font-weight: 300;
+
+                    .TextName {
+                        margin-right: 6%;
+                    }
+
+                    .TextIcon {
+                        width: 2em;
+                        height: 2em;
+                    }
+                }
             }
 
             .ContactInfo {
@@ -95,11 +125,6 @@
 
                 .LinkedIn {
                     margin: 0;
-
-                    .Icon {
-                        width: 2em;
-                        height: 2em;
-                    }
                 }
             }
 
