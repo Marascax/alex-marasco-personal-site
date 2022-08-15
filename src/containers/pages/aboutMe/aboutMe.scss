@@ -73,24 +73,36 @@
             font-weight: 500;
         }
 
-        .ContactInfo {
+        .BottomHalf {
 
-            p {
-                margin-top: 0;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+
+            .TechnicalSkills {
+                flex-grow: 1;
             }
 
-            .LinkedIn {
-                margin: 0;
+            .ContactInfo {
 
-                .Icon {
-                    width: 2em;
-                    height: 2em;
+                margin-left: 1%;
+
+                p {
+                    margin-top: 0;
+                }
+
+                .LinkedIn {
+                    margin: 0;
+
+                    .Icon {
+                        width: 2em;
+                        height: 2em;
+                    }
                 }
             }
+
         }
-
-        
-
-        
     }
 }
