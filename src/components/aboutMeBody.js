@@ -3,10 +3,17 @@ const AboutMeBody = props => {
     const pageData = props.data;
 
     const technicalSkills = pageData.technicalSkills;
-    // show icon with each language name
+    // show icon with each language name, framwork and library name, and tool name
+
     let languages = technicalSkills.languages.map((language, index) => (
         <div className="TextIcon" key={index}>
             <span className='TextName'>{language.name}</span><img className="TextIcon" src={language.icon} alt={language.name}/>
+        </div>
+    ));
+
+    let frameworksLibs = technicalSkills.frameworksLibraries.map((frameworkLib, index) => (
+        <div className="TextIcon" key={index}>
+            <span className='TextName'>{frameworkLib.name}</span><img className="TextIcon" src={frameworkLib.icon} alt={frameworkLib.name}/>
         </div>
     ));
 
@@ -21,8 +28,14 @@ const AboutMeBody = props => {
 
                     <h2>Languages</h2>
 
-                    <div className='Languages'>
+                    <div className='TextIconList'>
                         {languages}
+                    </div>
+
+                    <h2>Frameworks &amp; Libraries</h2>
+
+                    <div className='TextIconList'>
+                        {frameworksLibs}
                     </div>
 
                     <h2>Tools</h2>

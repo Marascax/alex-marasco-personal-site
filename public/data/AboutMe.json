@@ -30,6 +30,20 @@
                 "name": "C",
                 "icon": "https://img.icons8.com/color/480/c-programming.png"
             }
+        ],
+        "frameworksLibraries": [
+            {
+                "name": "React",
+                "icon": "https://styles.redditmedia.com/t5_2su6s/styles/communityIcon_4g1uo0kd87c61.png?width=256&s=3f7493995143d3cf40b1fedc582607cea194b579"
+            },
+            {
+                "name": "Node.js",
+                "icon": "https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
+            },
+            {
+                "name": "Next.js",
+                "icon": "https://www.openxcell.com/wp-content/uploads/2021/11/dango-inner-2.png"
+            }
         ]
     },
     "contactInfo": {
