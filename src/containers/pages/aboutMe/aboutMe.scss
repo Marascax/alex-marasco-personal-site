@@ -1,6 +1,7 @@
 @use '../../basePage';
 @use 'src/lib/styles/animations' as *;
 @use 'src/lib/styles/includeMedia' as *;
+@use 'src/lib/styles/clamp' as *;
 
 @include SlideHorizontal(-300%, SlideRight);
 
@@ -64,7 +65,9 @@
 
             box-sizing: border-box;
 
-            font-size: 1.5rem;
+            // font-size: 1.5rem;
+            // font-size: clamp(0.8rem, 1.19vw + 0.53rem, 1.5rem);
+            font-size: sass_clamp(360, 0.8, 1300, 1.5);
             font-weight: 300;
 
             word-wrap: break-word;
@@ -92,6 +95,10 @@
                 height: 100%;
 
                 overflow: auto;
+
+                h2 {
+                    font-size: sass_clamp(360, 0.5, 1300, 1.5);
+                }
 
                 .Languages {
                     width: 100%;
@@ -124,7 +131,8 @@
                     margin-bottom: 2%;
                     margin-right: 3%;
 
-                    font-size: 1.75rem;
+                    // font-size: 1.75rem;
+                    font-size: sass_clamp(360, 0.8, 1300, 1.75);
                     font-weight: 300;
 
                     .TextName {

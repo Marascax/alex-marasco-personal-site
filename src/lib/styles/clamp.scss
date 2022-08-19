@@ -1,0 +1,28 @@
+@use "sass:math";
+// @function sass_clamp($minWidth, $minFontSize, $maxWidth, $maxFontSize) {
+//     $minPx: calc(#{$minFontSize} * 16);
+//     $maxPx: calc(#{$maxFontSize} * 16);
+//     $v: calc((100 * (#{$maxPx} - #{$minPx})) / (#{$maxWidth} - #{$minWidth}));
+//     $r: calc(((#{$minWidth} * #{$maxPx}) - (#{$maxWidth} * #{$minPx})) / (#{$minWidth} - #{$maxWidth}));
+//     $v: calc(#{$v} * 1vw);
+//     $r: calc(#{$r} / 16px);
+//     $preferredValue: clamp(calc(#{$minFontSize} * 1rem), calc(#{$v} + #{$r}), calc(#{$maxFontSize} * 1rem));
+    
+//     @return $preferredValue;
+// }
+
+@function to-rems($px) {
+    $rems: math.div($px, 16) * 1rem;
+    @return $rems;
+}
+
+@function sass_clamp($min-bp, $min-rem, $max-bp, $max-rem) {
+    $min-px: $min-rem * 16;
+    $max-px: $max-rem * 16;
+    $slope: math.div($max-px - $min-px, $max-bp - $min-bp);
+    $slope-vw: $slope * 100;
+    $intercept-rems: to-rems($min-px - $slope * $min-bp);
+    $min-rems: to-rems($min-px);
+    $max-rems: to-rems($max-px);
+    @return clamp(#{$min-rems}, #{$slope-vw}vw + #{$intercept-rems}, #{$max-rems});
+}
