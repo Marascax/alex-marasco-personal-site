@@ -100,17 +100,7 @@
                     font-size: sass_clamp(360, 0.5, 1300, 1.5);
                 }
 
-                .Languages {
-                    width: 100%;
-                    max-height: 33%;
-                }
-
-                .FrameworksLibs {
-                    width: 100%;
-                    max-height: 33%;
-                }
-
-                .Tools {
+                .Languages, .FrameworksLibs, .Tools {
                     width: 100%;
                     max-height: 33%;
                 }
