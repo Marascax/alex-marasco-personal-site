@@ -26,29 +26,42 @@ const AboutMeBody = props => {
     return (
         <div className='MainContent'>
             
-            <p>{pageData.text}</p>
+            <p className='AboutMeText'>{pageData.text}</p>
 
             <div className='BottomHalf'>
 
                 <div className='TechnicalSkills'>
 
-                    <h2>Languages</h2>
+                    <div className='Languages'>
 
-                    <div className='TextIconList'>
-                        {languages}
+                        <h2>Languages</h2>
+
+                        <div className='TextIconList'>
+                            {languages}
+                        </div>
+
                     </div>
+                    
+                    <div className='FrameworksLibs'>
 
-                    <h2>Frameworks &amp; Libraries</h2>
+                        <h2>Frameworks &amp; Libraries</h2>
 
-                    <div className='TextIconList'>
-                        {frameworksLibs}
+                        <div className='TextIconList'>
+                            {frameworksLibs}
+                        </div>
+
                     </div>
+                    
+                    <div className='Tools'>
 
-                    <h2>Tools</h2>
-                    <div className="TextIconList">
-                        {tools}
+                        <h2>Tools</h2>
+
+                        <div className="TextIconList">
+                            {tools}
+                        </div>
+
                     </div>
-
+                    
                 </div>
 
                 <div className='ContactInfo'>
