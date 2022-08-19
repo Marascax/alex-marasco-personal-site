@@ -25,7 +25,7 @@
         h1 {
             width: 100%;
 
-            font-size: sass_clamp(360, 2.5, 1300, 4.5);
+            font-size: sass_clamp(360, 2.5, 2000, 4.5);
             font-weight: 200;
             text-align: left;
             text-transform: uppercase;
@@ -65,7 +65,7 @@
 
             box-sizing: border-box;
 
-            font-size: sass_clamp(360, 0.8, 1300, 1.5);
+            font-size: sass_clamp(360, 0.8, 2000, 1.5);
             font-weight: 300;
 
             word-wrap: break-word;
@@ -95,7 +95,7 @@
                 overflow: auto;
 
                 h2 {
-                    font-size: sass_clamp(360, 0.5, 1300, 1.5);
+                    font-size: sass_clamp(360, 0.5, 2000, 1.5);
                 }
 
                 .Languages, .FrameworksLibs, .Tools {
@@ -119,7 +119,7 @@
                     margin-bottom: 2%;
                     margin-right: 3%;
 
-                    font-size: sass_clamp(360, 0.8, 1300, 1.75);
+                    font-size: sass_clamp(360, 0.5, 2000, 1.75);
                     font-weight: 300;
 
                     .TextName {
@@ -140,11 +140,11 @@
                 margin-left: 1%;
 
                 h2 {
-                    font-size: sass_clamp(360, 0.5, 1300, 1.5);
+                    font-size: sass_clamp(360, 0.5, 2000, 1.5);
                 }
 
                 p {
-                    font-size: sass_clamp(360, 0.8, 1300, 1.5);
+                    font-size: sass_clamp(360, 0.8, 2000, 1.5);
 
                     margin-top: 0;
                 }
