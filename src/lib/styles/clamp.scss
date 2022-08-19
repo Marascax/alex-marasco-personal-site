@@ -1,15 +1,4 @@
 @use "sass:math";
-// @function sass_clamp($minWidth, $minFontSize, $maxWidth, $maxFontSize) {
-//     $minPx: calc(#{$minFontSize} * 16);
-//     $maxPx: calc(#{$maxFontSize} * 16);
-//     $v: calc((100 * (#{$maxPx} - #{$minPx})) / (#{$maxWidth} - #{$minWidth}));
-//     $r: calc(((#{$minWidth} * #{$maxPx}) - (#{$maxWidth} * #{$minPx})) / (#{$minWidth} - #{$maxWidth}));
-//     $v: calc(#{$v} * 1vw);
-//     $r: calc(#{$r} / 16px);
-//     $preferredValue: clamp(calc(#{$minFontSize} * 1rem), calc(#{$v} + #{$r}), calc(#{$maxFontSize} * 1rem));
-    
-//     @return $preferredValue;
-// }
 
 @function to-rems($px) {
     $rems: math.div($px, 16) * 1rem;
