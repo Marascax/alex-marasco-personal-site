@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Loading from '../../../components/loading';
-import AboutMeBody from '../../../components/aboutMeBody';
+import AboutMeBody from './aboutMeBody';
 import { useAppContext } from '../../../lib/appContext';
 
 import './aboutMe.scss';

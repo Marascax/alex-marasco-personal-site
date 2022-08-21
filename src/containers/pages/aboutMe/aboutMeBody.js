@@ -1,4 +1,4 @@
-import CaretDown from "./caretDown";
+import CaretDown from "../../../components/caretDown";
 
 
 const AboutMeBody = props => {
