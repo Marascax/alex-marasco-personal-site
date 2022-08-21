@@ -11,6 +11,7 @@ const AboutMeBody = props => {
     const [currDropdown, setCurrDropdown] = useState(null);
 
     const updateCurrDropdown = newDropdown => {
+        console.log('Update dropdown: ', currDropdown, newDropdown);
         // if the dropdown selected is the current one, then close the dropdown
         if (newDropdown === currDropdown) {
             setCurrDropdown(null);
@@ -53,12 +54,12 @@ const AboutMeBody = props => {
 
                     <div className='Languages'>
 
-                        <div className='TechSkillsHeader'>
+                        <div className='TechSkillsHeader' onClick={() => updateCurrDropdown(LANGUAGE_DROPDOWN)}>
                             <h2>Languages </h2>
                             <CaretDown/>
                         </div>
 
-                        <div className='TextIconList' style={{ display: currDropdown === LANGUAGE_DROPDOWN ? 'visible' : 'none'}}>
+                        <div className='TextIconList' style={{ display: currDropdown === LANGUAGE_DROPDOWN ? 'flex' : 'none'}}>
                             {languages}
                         </div>
 
@@ -66,12 +67,12 @@ const AboutMeBody = props => {
                     
                     <div className='FrameworksLibs'>
 
-                        <div className='TechSkillsHeader'>
+                        <div className='TechSkillsHeader' onClick={() => updateCurrDropdown(FRAMEWORKLIB_DROPDOWN)}>
                             <h2>Frameworks &amp; Libraries</h2>
                             <CaretDown/>
                         </div>
 
-                        <div className='TextIconList' style={{ display: currDropdown === FRAMEWORKLIB_DROPDOWN ? 'visible' : 'none'}}>
+                        <div className='TextIconList' style={{ display: currDropdown === FRAMEWORKLIB_DROPDOWN ? 'flex' : 'none'}}>
                             {frameworksLibs}
                         </div>
 
@@ -79,12 +80,12 @@ const AboutMeBody = props => {
                     
                     <div className='Tools'>
 
-                        <div className='TechSkillsHeader'>
+                        <div className='TechSkillsHeader' onClick={() => updateCurrDropdown(TOOL_DROPDOWN)}>
                             <h2>Tools</h2>
                             <CaretDown/>
                         </div>
 
-                        <div className="TextIconList" style={{ display: currDropdown === TOOL_DROPDOWN ? 'visible' : 'none'}}>
+                        <div className="TextIconList" style={{ display: currDropdown === TOOL_DROPDOWN ? 'flex' : 'none'}}>
                             {tools}
                         </div>
 
