@@ -107,6 +107,12 @@
                     max-height: 33%;
                 }
 
+                .TechSkillsHeader {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+
                 .TextIconList {
                     flex-basis: 100%;
 

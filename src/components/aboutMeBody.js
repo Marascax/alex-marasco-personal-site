@@ -1,3 +1,5 @@
+import CaretDown from "./caretDown";
+
 
 const AboutMeBody = props => {
     const pageData = props.data;
@@ -34,7 +36,10 @@ const AboutMeBody = props => {
 
                     <div className='Languages'>
 
-                        <h2>Languages</h2>
+                        <div className='TechSkillsHeader'>
+                            <h2>Languages </h2>
+                            <CaretDown/>
+                        </div>
 
                         <div className='TextIconList'>
                             {languages}
@@ -44,7 +49,10 @@ const AboutMeBody = props => {
                     
                     <div className='FrameworksLibs'>
 
-                        <h2>Frameworks &amp; Libraries</h2>
+                        <div className='TechSkillsHeader'>
+                            <h2>Frameworks &amp; Libraries</h2>
+                            <CaretDown/>
+                        </div>
 
                         <div className='TextIconList'>
                             {frameworksLibs}
@@ -54,7 +62,10 @@ const AboutMeBody = props => {
                     
                     <div className='Tools'>
 
-                        <h2>Tools</h2>
+                        <div className='TechSkillsHeader'>
+                            <h2>Tools</h2>
+                            <CaretDown/>
+                        </div>
 
                         <div className="TextIconList">
                             {tools}
