@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import Page from './page';
 import MainPage from './pages/mainPage/mainPage';
+import AboutMe from './pages/aboutMe/aboutMe';
 import { useAppContext } from '../lib/appContext';
 
 import './App.scss';
@@ -11,7 +12,7 @@ function App() {
     const appRef = useRef(null);
     const currPageIndex = useRef(0);
 
-    const pages = ['mainPage', 'page2', 'page3'];
+    const pages = ['mainPage', 'aboutMe', 'page3'];
 
     // const updatePageSessionStorage = () => context.setCurrentPage(currPageIndex.current);
 
@@ -74,7 +75,9 @@ function App() {
             <Page id='mainPage'>
                 <MainPage/>
             </Page>
-            <Page id='page2'/>
+            <Page id='aboutMe'>
+                <AboutMe/>
+            </Page>
             <Page id='page3'/>
         </div>
     );

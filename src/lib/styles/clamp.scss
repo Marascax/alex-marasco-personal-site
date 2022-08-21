@@ -1,0 +1,17 @@
+@use "sass:math";
+
+@function to-rems($px) {
+    $rems: math.div($px, 16) * 1rem;
+    @return $rems;
+}
+
+@function sass_clamp($min-bp, $min-rem, $max-bp, $max-rem) {
+    $min-px: $min-rem * 16;
+    $max-px: $max-rem * 16;
+    $slope: math.div($max-px - $min-px, $max-bp - $min-bp);
+    $slope-vw: $slope * 100;
+    $intercept-rems: to-rems($min-px - $slope * $min-bp);
+    $min-rems: to-rems($min-px);
+    $max-rems: to-rems($max-px);
+    @return clamp(#{$min-rems}, #{$slope-vw}vw + #{$intercept-rems}, #{$max-rems});
+}
