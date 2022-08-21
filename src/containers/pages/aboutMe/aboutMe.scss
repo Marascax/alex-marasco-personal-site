@@ -49,7 +49,7 @@
             animation: SlideRight 0.5s linear;
 
             @include media('<desktop') {
-                padding-top: 0.5%;
+                padding-top: 1%;
             }
     
         }
@@ -79,7 +79,7 @@
 
         .AboutMeText {
             width: 100%;
-            height: 15%;
+            flex-grow: 1;
 
             box-sizing: border-box;
 
@@ -92,17 +92,24 @@
                 height: auto;
 
                 flex-grow: 1;
+
+                margin-left: 1%;
             }
         }
 
         .Icon {
             width: 2em;
             height: 2em;
+
+            @include media('<desktop') {
+                width: 1.5em;
+                height: 1.5em;
+            }
         }
 
         .BottomHalf {
             width: 100%;
-            height: 85%;
+            flex-grow: 2;
 
             display: flex;
             justify-content: center;
@@ -127,7 +134,7 @@
                     width: 100%;
                     height: auto;
 
-                    flex-grow: 2;
+                    flex-grow: 1;
 
                     margin-left: 1%;
                 }
@@ -162,6 +169,12 @@
                     font-size: sass_clamp(360, 0.8, 2000, 1.75);
                     font-weight: 300;
 
+                    @include media('<desktop','height<=700px') {
+                        .TextName {
+                            display: none;
+                        }
+                    }
+
                     .TextName {
                         margin-right: 6%;
                     }
@@ -184,6 +197,11 @@
                     height: auto;
 
                     flex-grow: 1;
+
+                    @include media('height<=700px') {
+                        flex-grow: 0.5;
+                    }
+                    
                 }
 
                 h2 {
@@ -197,6 +215,9 @@
 
                     margin-top: 0;
 
+                    @include media('height<=700px') {
+                        margin-bottom: 0;
+                    }
                 }
 
                 a {
