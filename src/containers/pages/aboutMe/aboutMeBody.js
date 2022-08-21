@@ -1,7 +1,24 @@
+import { useState } from "react";
+
 import CaretDown from "../../../components/caretDown";
+
+const LANGUAGE_DROPDOWN = 0;
+const FRAMEWORKLIB_DROPDOWN = 1;
+const TOOL_DROPDOWN = 2;
 
 
 const AboutMeBody = props => {
+    const [currDropdown, setCurrDropdown] = useState(null);
+
+    const updateCurrDropdown = newDropdown => {
+        // if the dropdown selected is the current one, then close the dropdown
+        if (newDropdown === currDropdown) {
+            setCurrDropdown(null);
+        } else {
+            setCurrDropdown(newDropdown);
+        }
+    }
+
     const pageData = props.data;
 
     const technicalSkills = pageData.technicalSkills;
@@ -41,7 +58,7 @@ const AboutMeBody = props => {
                             <CaretDown/>
                         </div>
 
-                        <div className='TextIconList'>
+                        <div className='TextIconList' style={{ display: currDropdown === LANGUAGE_DROPDOWN ? 'visible' : 'none'}}>
                             {languages}
                         </div>
 
@@ -54,7 +71,7 @@ const AboutMeBody = props => {
                             <CaretDown/>
                         </div>
 
-                        <div className='TextIconList'>
+                        <div className='TextIconList' style={{ display: currDropdown === FRAMEWORKLIB_DROPDOWN ? 'visible' : 'none'}}>
                             {frameworksLibs}
                         </div>
 
@@ -67,7 +84,7 @@ const AboutMeBody = props => {
                             <CaretDown/>
                         </div>
 
-                        <div className="TextIconList">
+                        <div className="TextIconList" style={{ display: currDropdown === TOOL_DROPDOWN ? 'visible' : 'none'}}>
                             {tools}
                         </div>
 
