@@ -37,3 +37,14 @@
         }
     }
 }
+
+@mixin Scale($start, $stop, $name) {
+    @include keyframes($name) {
+        0% {
+            transform: scale($start);
+        }
+        100% {
+            transform: scale($stop);
+        }
+    }
+}
