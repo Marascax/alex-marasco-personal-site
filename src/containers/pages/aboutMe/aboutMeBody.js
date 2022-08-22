@@ -27,19 +27,19 @@ const AboutMeBody = props => {
 
     let languages = technicalSkills.languages.map((language, index) => (
         <div className="TextIcon" key={index}>
-            <img className="TextIcon" src={language.icon} alt={language.name}/><span className='TextName'>{language.name}</span>
+            <img className="Icon" src={language.icon} alt={language.name}/><span className='TextName'>{language.name}</span>
         </div>
     ));
 
     let frameworksLibs = technicalSkills.frameworksLibraries.map((frameworkLib, index) => (
         <div className="TextIcon" key={index}>
-            <img className="TextIcon" src={frameworkLib.icon} alt={frameworkLib.name}/><span className='TextName'>{frameworkLib.name}</span>
+            <img className="Icon" src={frameworkLib.icon} alt={frameworkLib.name}/><span className='TextName'>{frameworkLib.name}</span>
         </div>
     ));
 
     let tools = technicalSkills.tools.map((tool, index) => (
         <div className="TextIcon" key={index}>
-            <img className="TextIcon" src={tool.icon} alt={tool.name}/><span className='TextName'>{tool.name}</span>
+            <img className="Icon" src={tool.icon} alt={tool.name}/><span className='TextName'>{tool.name}</span>
         </div>
     ));
 
