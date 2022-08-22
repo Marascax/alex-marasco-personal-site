@@ -8,6 +8,8 @@
     display: flex;
     justify-content: center;
 
+    text-align: left;
+
     @include media('<desktop') {
         height: 10%;
     }
@@ -21,7 +23,6 @@
 
         font-size: sass_clamp(360, 2, 2000, 4.5);
         font-weight: 200;
-        text-align: left;
         text-transform: uppercase;
 
         color: white;
@@ -29,6 +30,6 @@
         margin: 0;
 
         padding-top: 2%;
-        padding-left: 5%;
+        padding-left: 2%;
     }
 }
