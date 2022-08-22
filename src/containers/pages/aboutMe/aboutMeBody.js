@@ -1,5 +1,25 @@
+import { useState } from "react";
+
+import CaretDown from "../../../components/caretDown";
+
+const LANGUAGE_DROPDOWN = 0;
+const FRAMEWORKLIB_DROPDOWN = 1;
+const TOOL_DROPDOWN = 2;
+
 
 const AboutMeBody = props => {
+    const [currDropdown, setCurrDropdown] = useState(null);
+
+    const updateCurrDropdown = newDropdown => {
+        console.log('Update dropdown: ', currDropdown, newDropdown);
+        // if the dropdown selected is the current one, then close the dropdown
+        if (newDropdown === currDropdown) {
+            setCurrDropdown(null);
+        } else {
+            setCurrDropdown(newDropdown);
+        }
+    }
+
     const pageData = props.data;
 
     const technicalSkills = pageData.technicalSkills;
@@ -7,19 +27,19 @@ const AboutMeBody = props => {
 
     let languages = technicalSkills.languages.map((language, index) => (
         <div className="TextIcon" key={index}>
-            <img className="TextIcon" src={language.icon} alt={language.name}/><span className='TextName'>{language.name}</span>
+            <img className="Icon" src={language.icon} alt={language.name}/><span className='TextName'>{language.name}</span>
         </div>
     ));
 
     let frameworksLibs = technicalSkills.frameworksLibraries.map((frameworkLib, index) => (
         <div className="TextIcon" key={index}>
-            <img className="TextIcon" src={frameworkLib.icon} alt={frameworkLib.name}/><span className='TextName'>{frameworkLib.name}</span>
+            <img className="Icon" src={frameworkLib.icon} alt={frameworkLib.name}/><span className='TextName'>{frameworkLib.name}</span>
         </div>
     ));
 
     let tools = technicalSkills.tools.map((tool, index) => (
         <div className="TextIcon" key={index}>
-            <img className="TextIcon" src={tool.icon} alt={tool.name}/><span className='TextName'>{tool.name}</span>
+            <img className="Icon" src={tool.icon} alt={tool.name}/><span className='TextName'>{tool.name}</span>
         </div>
     ));
 
@@ -34,9 +54,12 @@ const AboutMeBody = props => {
 
                     <div className='Languages'>
 
-                        <h2>Languages</h2>
+                        <div className='TechSkillsHeader' onClick={() => updateCurrDropdown(LANGUAGE_DROPDOWN)}>
+                            <h2>Programming Languages</h2>
+                            <CaretDown/>
+                        </div>
 
-                        <div className='TextIconList'>
+                        <div className='TextIconList' style={{ display: currDropdown === LANGUAGE_DROPDOWN ? 'flex' : 'none'}}>
                             {languages}
                         </div>
 
@@ -44,9 +67,12 @@ const AboutMeBody = props => {
                     
                     <div className='FrameworksLibs'>
 
-                        <h2>Frameworks &amp; Libraries</h2>
+                        <div className='TechSkillsHeader' onClick={() => updateCurrDropdown(FRAMEWORKLIB_DROPDOWN)}>
+                            <h2>Frameworks &amp; Libraries</h2>
+                            <CaretDown/>
+                        </div>
 
-                        <div className='TextIconList'>
+                        <div className='TextIconList' style={{ display: currDropdown === FRAMEWORKLIB_DROPDOWN ? 'flex' : 'none'}}>
                             {frameworksLibs}
                         </div>
 
@@ -54,9 +80,12 @@ const AboutMeBody = props => {
                     
                     <div className='Tools'>
 
-                        <h2>Tools</h2>
+                        <div className='TechSkillsHeader' onClick={() => updateCurrDropdown(TOOL_DROPDOWN)}>
+                            <h2>Development Tools</h2>
+                            <CaretDown/>
+                        </div>
 
-                        <div className="TextIconList">
+                        <div className="TextIconList" style={{ display: currDropdown === TOOL_DROPDOWN ? 'flex' : 'none'}}>
                             {tools}
                         </div>
 
