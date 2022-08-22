@@ -12,7 +12,7 @@ const MainPage = props => {
     return (
         <div className="MainPage">
 
-            <div className="MainContent">
+            <div className="MainPageContent">
 
                 <div className="SelfImage">
                     <img src="images/Alex_Marasco.jpg"/>

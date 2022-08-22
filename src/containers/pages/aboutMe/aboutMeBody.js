@@ -44,11 +44,11 @@ const AboutMeBody = props => {
     ));
 
     return (
-        <div className='MainContent'>
+        <div className='AboutMeContent'>
             
             <p className='AboutMeText'>{pageData.text}</p>
 
-            <div className='BottomHalf'>
+            <div className='AboutMeBottomHalf'>
 
                 <div className='TechnicalSkills'>
 
