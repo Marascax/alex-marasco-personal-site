@@ -11,7 +11,6 @@ const AboutMeBody = props => {
     const [currDropdown, setCurrDropdown] = useState(null);
 
     const updateCurrDropdown = newDropdown => {
-        console.log('Update dropdown: ', currDropdown, newDropdown);
         // if the dropdown selected is the current one, then close the dropdown
         if (newDropdown === currDropdown) {
             setCurrDropdown(null);
@@ -46,7 +45,10 @@ const AboutMeBody = props => {
     return (
         <div className='AboutMeContent'>
             
-            <p className='AboutMeText'>{pageData.text}</p>
+            <div className='AboutMeText'>
+                <p>{pageData.text}</p>
+            </div>
+            
 
             <div className='AboutMeBottomHalf'>
 
