@@ -1,4 +1,4 @@
-@use '../../basePage';
+// @use '../../basePage';
 @use 'src/lib/styles/animations' as *;
 @use 'src/lib/styles/includeMedia' as *;
 
@@ -32,6 +32,7 @@
         height: 100%;
 
         display: flex;
+        flex-direction: row;
         justify-content: center; // center horizontally
         align-items: center; // center vertically
 
@@ -45,6 +46,10 @@
             display: flex;
             justify-content: center; // center horizontally
             align-items: center; // center vertically
+
+            @include media('<desktop') {
+                display: none;
+            }
 
             img {
                 width: 100%;
@@ -71,6 +76,13 @@
 
             overflow: hidden;
 
+            @include media('<desktop') {
+                width: 100%;
+                height: 100%;
+
+                margin: 0.5%;
+            }
+
             p { // 'welcome to the personal site of'
                 width: 100%;
                 font-size: 3rem;
@@ -81,6 +93,10 @@
                 margin: 0;
 
                 animation: SlideRight 0.5s linear;
+
+                @include media('<desktop') {
+                    text-align: center;
+                }
             }
     
             h1 { // 'ALEXANDER MARASCO'
@@ -118,26 +134,4 @@
 
 } // MainPage
 
-@include media('<desktop') {
-    .MainPage {
-        .MainContent {
-            // dont show image if not on desktop screen due to limited width
-            .SelfImage {
-                display: none;
-            }
-
-            // expand text to entire page
-            .WelcomeText {
-                width: 100%;
-                height: 100%;
-
-                margin: 0.5%;
-
-                p { // have all text center align
-                    text-align: center;
-                }
-            }
-        }
-    }
-}
 
