@@ -55,7 +55,7 @@ const AboutMeBody = props => {
                     <div className='Languages'>
 
                         <div className='TechSkillsHeader' onClick={() => updateCurrDropdown(LANGUAGE_DROPDOWN)}>
-                            <h2>Languages </h2>
+                            <h2>Programming Languages</h2>
                             <CaretDown/>
                         </div>
 
@@ -81,7 +81,7 @@ const AboutMeBody = props => {
                     <div className='Tools'>
 
                         <div className='TechSkillsHeader' onClick={() => updateCurrDropdown(TOOL_DROPDOWN)}>
-                            <h2>Tools</h2>
+                            <h2>Development Tools</h2>
                             <CaretDown/>
                         </div>
 
