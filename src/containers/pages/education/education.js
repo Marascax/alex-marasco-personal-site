@@ -1,6 +1,8 @@
 import DownArrow from "../../../components/downArrow";
 import { useAppContext } from "../../../lib/appContext";
 
+import transcript from '../../../assets/files/Transcript.pdf';
+
 import './education.scss';
 
 const Education = props => {
@@ -42,6 +44,12 @@ const Education = props => {
 
                         <li>
                             3.699 GPA
+                        </li>
+
+                        <li>
+                            <a href={transcript} download='AlexanderMarascoTranscript.pdf'>
+                                Download Transcript
+                            </a>
                         </li>
                     </ul>
 

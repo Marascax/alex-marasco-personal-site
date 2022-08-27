@@ -35,7 +35,6 @@
 
     display: flex;
     justify-content: center;
-    // align-items: center;
 
     h2 {
         font-size: sass_clamp(360, 0.8, 2000, 2);
@@ -46,6 +45,8 @@
 .DegreeSpecs {
     margin: 0;
     padding: 0;
+
+    margin-top: 10%;
 
     li {
         height: 5rem;
@@ -60,7 +61,14 @@
         font-weight: 300;
         line-height: 2rem;
 
+        text-align: left;
+
         list-style: none;
+
+        a {
+            font-weight: 500;
+            text-decoration: none;
+        }
     }
 }
 
