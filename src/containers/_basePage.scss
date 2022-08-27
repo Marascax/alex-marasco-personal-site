@@ -61,4 +61,8 @@
             animation: ArrowBounce 1s ease-in-out infinite;
         }
     }
+
+    @include media('<desktop') {
+        display: none;
+    }
 }
