@@ -27,7 +27,11 @@ const Education = props => {
 
                     <ul className='DegreeSpecs'>
                         <li>
-                            James Madison University (Class of '21)
+                            James Madison University
+                        </li>
+
+                        <li>
+                            Class of 2021
                         </li>
 
                         <li>

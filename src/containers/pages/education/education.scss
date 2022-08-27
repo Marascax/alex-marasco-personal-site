@@ -28,6 +28,12 @@
 
     font-family: 'Roboto';
     color: white;
+
+    @include media('<desktop') {
+        height: 90%;
+
+        flex-direction: column;
+    }
 }
 
 .Degree {
@@ -39,6 +45,10 @@
     h2 {
         font-size: sass_clamp(360, 0.8, 2000, 2);
         font-weight: 400;
+    }
+
+    @include media('<desktop') {
+        width: 100%;
     }
 }
 
@@ -57,7 +67,7 @@
 
         text-transform: uppercase;
 
-        font-size: sass_clamp(360, 0.8, 2000, 2);
+        font-size: sass_clamp(360, 1, 2000, 2);
         font-weight: 300;
         line-height: 2rem;
 
@@ -68,6 +78,10 @@
         a {
             font-weight: 500;
             text-decoration: none;
+        }
+
+        @include media('<desktop') {
+            height: auto;
         }
     }
 }
@@ -80,5 +94,9 @@
         // height: 100%;
 
         object-fit: contain;
+    }
+
+    @include media('<desktop') {
+        width: 100%;
     }
 }
