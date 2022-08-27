@@ -15,6 +15,12 @@ const Education = props => {
 
             <div className='EducationContent'>
 
+                <div className='JmuImg'>
+
+                    <img src='https://nvca.org/wp-content/uploads/2021/01/JMU-Logo-RGB-vert-purple.png' alt='JMU Logo'/>
+
+                </div>
+
                 <div className='Degree'>
 
                     <ul className='DegreeSpecs'>
@@ -38,10 +44,6 @@ const Education = props => {
                             3.699 GPA
                         </li>
                     </ul>
-
-                </div>
-
-                <div className='JmuImg'>
 
                 </div>
 
