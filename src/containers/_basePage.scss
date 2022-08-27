@@ -1,5 +1,8 @@
+@use 'src/lib/styles/animations' as *;
 @use 'src/lib/styles/includeMedia' as *;
 @use 'src/lib/styles/clamp' as *;
+
+@include SlideVertical(-2000%, DownArrowSlideDown);
 
 .Header {
     width: 100%;
@@ -47,6 +50,8 @@
     bottom: 1%;
     right: 1%;
     z-index: 2;
+
+    animation: DownArrowSlideDown 1s ease-in;
 
     svg {
         cursor: pointer;
