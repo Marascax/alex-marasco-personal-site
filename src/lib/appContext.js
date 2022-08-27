@@ -34,15 +34,25 @@ export function AppContextWrapper({children}) {
     // scroll up (left) a page
     const scrollUp = () => {
         let currPage = getCurrentPage();
-        scrollToPage(--currPage);
-        setCurrentPage(currPage);
+
+        // can't scroll up if at first page
+        if (currPage > 0) {
+            scrollToPage(--currPage);
+            setCurrentPage(currPage);
+        }
+        
     }
 
     // scroll down (right) a page
     const scrollDown = () => {
         let currPage = getCurrentPage();
-        scrollToPage(++currPage);
-        setCurrentPage(currPage);
+
+        // cant scroll down if at the last page
+        if (currPage !== pages.current.length - 1) {
+            scrollToPage(++currPage);
+            setCurrentPage(currPage);
+        }
+        
     }
 
     const updatePages = newPages => pages.current = newPages;

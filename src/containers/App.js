@@ -15,33 +15,15 @@ function App() {
 
     const pages = ['mainPage', 'aboutMe', 'education'];
 
-    // const updatePageSessionStorage = () => context.setCurrentPage(currPageIndex.current);
-
-    // const scrollUp = () => {
-    //     context.scrollTo(`#${pages[--currPageIndex.current]}`);
-    //     updatePageSessionStorage();
-    // }
-
-    // const scrollDown = () => {
-    //     context.scrollTo(`#${pages[++currPageIndex.current]}`);
-    //     updatePageSessionStorage();
-    // }
-
     const wheelHandler = e => {
         e.preventDefault();
 
         currPageIndex.current = context.getCurrentPage();
 
-        if (e.deltaY < 0) { // scroll up
-            // can't scroll up any farther if at top page
-            if (currPageIndex.current > 0) {
-                context.scrollUp();
-            }
-        } else if (e.deltaY > 0) { // scroll down
-            // cant scroll down if at bottom page
-            if (currPageIndex.current !== pages.length - 1) {
-                context.scrollDown();
-            }
+        if (e.deltaY < 0) {
+            context.scrollUp();
+        } else if (e.deltaY > 0) {
+            context.scrollDown();
         }
     }
 
