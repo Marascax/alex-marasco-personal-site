@@ -5,6 +5,10 @@
 
 @include Scale(0, 1, ScaleUp);
 
+@include SlideHorizontal(-300%, AboutMeSlideRight);
+@include SlideHorizontal(300%, AboutMeSlideLeft);
+@include SlideVertical(-300%, AboutMeTextSlideDown);
+
 .AboutMe {
     width: 100%;
     height: 100%;
@@ -50,6 +54,8 @@
     font-weight: 300;
 
     word-wrap: break-word;
+
+    animation: AboutMeTextSlideDown 0.5s ease-out;
 
     @include media('<desktop') {
         height: auto;
@@ -105,6 +111,29 @@
 
 .Languages, .FrameworksLibs, .Tools {
     width: 100%;
+
+    animation-name: AboutMeSlideRight;
+    animation-timing-function: ease-out;
+}
+
+.Languages {
+    animation-duration: 0.25s;
+}
+
+.FrameworksLibs {
+    animation-duration: 0.5s;
+
+    @include media('<desktop') {
+        animation-duration: 0.35s;
+    }
+}
+
+.Tools {
+    animation-duration: 0.75s;
+
+    @include media('<desktop') {
+        animation-duration: 0.45s;
+    }
 }
 
 .TechSkillsHeader {
@@ -166,12 +195,53 @@
         font-size: sass_clamp(360, 0.8, 2000, 1.5);
 
         margin-top: 0;
+
+        animation-duration: 0.25s;
+        animation-timing-function: ease-out;
+        animation-name: AboutMeSlideLeft;
+
+        @include media('<desktop') {
+            animation-name: AboutMeSlideRight;
+            animation-duration: 0.55s;
+        }
     }
 
-    p {
+    .ContactInfoEmail, .ContactInfoPhone, .LinkedIn {
         font-size: sass_clamp(360, 0.8, 2000, 1.5);
 
         margin-top: 0;
+
+        animation-timing-function: ease-out;
+        animation-name: AboutMeSlideLeft;
+
+        @include media('<desktop') {
+            animation-name: AboutMeSlideRight;
+        }
+    }
+
+    .ContactInfoEmail {
+       animation-duration: 0.5s;
+
+       @include media('<desktop') {
+            animation-duration: 0.65s;
+        }
+    }
+
+    .ContactInfoPhone {
+        animation-duration: 0.75s;
+    }
+
+    .LinkedIn {
+        margin: 0;
+
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        animation-name: AboutMeSlideLeft;
+
+        @include media('<desktop') {
+            animation-name: AboutMeSlideRight;
+            animation-duration: 0.85s;
+        }
     }
 
     a {
@@ -179,7 +249,4 @@
         font-weight: 500;
     }
 
-    .LinkedIn {
-        margin: 0;
-    }
 }

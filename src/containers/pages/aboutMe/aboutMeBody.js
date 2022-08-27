@@ -99,11 +99,11 @@ const AboutMeBody = props => {
 
                     <h2>Contact Information</h2>
 
-                    <p>
+                    <p className='ContactInfoEmail'>
                         <a href={`mailto:${pageData.contactInfo.email}`}>{pageData.contactInfo.email}</a>
                     </p>
 
-                    <p>
+                    <p className='ContactInfoPhone'>
                         <a href={`tel:+${pageData.contactInfo.phoneNumber}`}>{pageData.contactInfo.phoneNumber}</a>
                     </p>
 
