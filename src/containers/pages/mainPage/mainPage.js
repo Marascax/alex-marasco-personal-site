@@ -22,7 +22,7 @@ const MainPage = props => {
                     <p>Welcome to the Personal Site of</p>
                     <h1>Alexander Marasco</h1>
                     
-                    <div className='DownArrow' onClick={() => context.scrollDown()}>
+                    <div className='MainPageDownArrow' onClick={() => context.scrollDown()}>
                         <DownArrow width="100"/>
                     </div>
                     

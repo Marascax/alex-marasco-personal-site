@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Loading from '../../../components/loading';
 import AboutMeBody from './aboutMeBody';
+import DownArrow from '../../../components/downArrow';
 import { useAppContext } from '../../../lib/appContext';
 
 import './aboutMe.scss';
@@ -29,6 +30,10 @@ const AboutMe = props => {
             </div>
 
             {content}
+
+            <div className='DownArrow' onClick={() => context.scrollDown()}>
+                <DownArrow width="100"/>
+            </div>
         </div>
     );
 }

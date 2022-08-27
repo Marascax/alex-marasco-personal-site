@@ -1,11 +1,10 @@
-// @use '../../basePage';
+@use '../../basePage';
 @use 'src/lib/styles/animations' as *;
 @use 'src/lib/styles/includeMedia' as *;
 
 @include SlideHorizontal(300%, SlideLeft); // h1 welcome text animation
 @include SlideHorizontal(-300%, SlideRight); // p welcome text animation
 
-@include SlideVertical(-800%, SlideDown);
 @include keyframes(ArrowBounce) {
     0% {
         transform: translateY(0%);
@@ -111,7 +110,7 @@
         animation: SlideLeft 0.5s linear;
     }
 
-    .DownArrow {
+    .MainPageDownArrow {
         width: 100%;
 
         display: flex;
@@ -120,7 +119,7 @@
 
         padding-top: 2%;
 
-        animation: SlideDown 0.5s linear;
+        animation: DownArrowSlideDown 0.5s linear;
 
         svg {
             cursor: pointer;

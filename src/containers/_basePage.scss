@@ -1,5 +1,8 @@
+@use 'src/lib/styles/animations' as *;
 @use 'src/lib/styles/includeMedia' as *;
 @use 'src/lib/styles/clamp' as *;
+
+@include SlideVertical(-2000%, DownArrowSlideDown);
 
 .Header {
     width: 100%;
@@ -31,5 +34,31 @@
 
         padding-top: 2%;
         padding-left: 2%;
+    }
+}
+
+.DownArrow {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    padding-top: 2%;
+
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    z-index: 2;
+
+    animation: DownArrowSlideDown 1s ease-in;
+
+    svg {
+        cursor: pointer;
+        color: white;
+
+        &:hover {
+            animation: ArrowBounce 1s ease-in-out infinite;
+        }
     }
 }
