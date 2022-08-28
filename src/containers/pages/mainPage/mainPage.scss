@@ -109,25 +109,4 @@
 
         animation: SlideLeft 0.5s linear;
     }
-
-    .MainPageDownArrow {
-        width: 100%;
-
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-
-        padding-top: 2%;
-
-        animation: DownArrowSlideDown 0.5s linear;
-
-        svg {
-            cursor: pointer;
-
-            &:hover {
-                animation: ArrowBounce 1s ease-in-out infinite;
-            }
-        }
-        
-    }
 } 

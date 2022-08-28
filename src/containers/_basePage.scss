@@ -61,9 +61,13 @@
         &:hover {
             animation: ArrowBounce 1s ease-in-out infinite;
         }
-    }
 
-    @include media('<desktop') {
-        display: none;
+        @include media('<desktop') {
+            transform: scale(0.75);
+        }
+
+        @include media('<phone') {
+            transform: scale(0.5);
+        }
     }
 }

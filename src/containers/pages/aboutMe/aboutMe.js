@@ -31,9 +31,6 @@ const AboutMe = props => {
 
             {content}
 
-            <div className='DownArrow' onClick={() => context.scrollDown()}>
-                <DownArrow width="100"/>
-            </div>
         </div>
     );
 }

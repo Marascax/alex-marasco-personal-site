@@ -13,7 +13,7 @@ function App() {
     const appRef = useRef(null);
     const currPageIndex = useRef(0);
 
-    const pages = ['mainPage', 'aboutMe', 'education'];
+    const pages = ['mainPage', 'aboutMe', 'education', 'page4'];
 
     const wheelHandler = e => {
         e.preventDefault();
@@ -64,6 +64,7 @@ function App() {
             <Page id='education'>
                 <Education/>
             </Page>
+            <Page id='page4'/>
         </div>
     );
 }
