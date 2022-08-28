@@ -19,12 +19,9 @@ const MainPage = props => {
                 </div>
 
                 <div className="WelcomeText">
+                    
                     <p>Welcome to the Personal Site of</p>
                     <h1>Alexander Marasco</h1>
-                    
-                    <div className='DownArrow' onClick={() => context.scrollDown()}>
-                        <DownArrow width="100"/>
-                    </div>
                     
                 </div>
                 

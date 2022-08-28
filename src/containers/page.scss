@@ -1,4 +1,4 @@
-@use 'basePage';
+@use 'src/containers/basePage';
 
 $gradient-left: #36D1DC;
 $gradient-mid: #86A8E7;
@@ -7,7 +7,11 @@ $gradient-right: #5B86E5;
 .Page {
     width: 100%;
     height: 100%;
+
     box-sizing: border-box;
+
+    position: relative;
+
     background: $gradient-left;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, $gradient-left,$gradient-right);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, $gradient-left, $gradient-right); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
