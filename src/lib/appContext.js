@@ -77,6 +77,9 @@ export function AppContextWrapper({children}) {
 
     const setCurrentPage = currPage => setSessionStorageItem('currentPage', currPage);
 
+    const onFirstPage = () => getCurrentPage() === 0;
+
+    const onLastPage = () => getCurrentPage() === pages.current.length - 1;
 
     let state = {
         loading,
@@ -89,7 +92,9 @@ export function AppContextWrapper({children}) {
         addPage,
         removePage,
         getCurrentPage,
-        setCurrentPage
+        setCurrentPage,
+        onFirstPage,
+        onLastPage
     };
 
     return (
