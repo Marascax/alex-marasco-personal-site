@@ -110,7 +110,7 @@
         animation: SlideLeft 0.5s linear;
     }
 
-    .MainPageDownArrow {
+    .DownArrow {
         width: 100%;
 
         display: flex;
@@ -118,6 +118,8 @@
         align-items: flex-end;
 
         padding-top: 2%;
+
+        position: relative;
 
         animation: DownArrowSlideDown 0.5s linear;
 
