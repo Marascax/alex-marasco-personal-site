@@ -50,6 +50,8 @@
     justify-content: center; // center horizontally
     align-items: center; // center vertically
 
+    animation: SlideRight 0.5s ease-out;
+
     @include media('<desktop') {
         display: none;
     }
