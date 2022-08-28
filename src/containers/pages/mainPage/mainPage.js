@@ -20,8 +20,9 @@ const MainPage = props => {
 
                 <div className="WelcomeText">
                     
-                    <p>Welcome to the Personal Site of</p>
-                    <h1>Alexander Marasco</h1>
+                    <p className='WelcomeTop'>Welcome to the Personal Site of</p>
+
+                    <p className='WelcomeBottom'>Alexander Marasco</p>
                     
                 </div>
                 
