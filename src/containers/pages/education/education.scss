@@ -63,13 +63,10 @@
         height: calc(100% / 7);
 
         margin: 0;
-        opacity: 1;
         padding: 0;
 
-        text-transform: uppercase;
-
         font-size: sass_clamp(360, 1, 2000, 2);
-        font-weight: 300;
+        font-weight: 400;
         line-height: 2rem;
 
         text-align: left;
