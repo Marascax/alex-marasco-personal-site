@@ -69,10 +69,11 @@
     
         display: flex;
         align-items: center;
+        box-sizing: border-box;
     
         padding-bottom: 2%;
     
-        box-sizing: border-box;
+        cursor: pointer;
     
         &::before {
             content: '';
