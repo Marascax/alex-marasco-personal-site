@@ -1,18 +1,16 @@
+import TimelineItem from "../components/timelineItem";
 
 const Timeline = props => {
 
     const timelineData = props.data;
 
     let content = timelineData.map((item, index) => (
-        <div className='timeline-item' key={index}>
-
-            <div className='item-container'>
-                <div className='item-title'>{item.title}</div>
-                <div className='item-subtitle'>{item.subtitle}</div>
-                <div className='item-date'>{item.startDate} - {item.endDate}</div>
-            </div>
-            
-        </div>
+        <TimelineItem 
+            key={index} 
+            title={item.title} 
+            subtitle={item.subtitle} 
+            startDate={item.startDate} 
+            endDate={item.endDate}/>
     ));
 
     return (
