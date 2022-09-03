@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Loading from '../../../components/loading';
+import Timeline from '../../timeline';
 import { useAppContext } from '../../../lib/appContext';
 
 import './workHistory.scss'
@@ -11,22 +12,12 @@ const WorkHistory = props => {
 
     const [pageJson, setPageJson] = useState(null);
 
-    let content;
-    if (!pageJson) content = <Loading/>;
+    let timelineContent;
+    if (!pageJson) timelineContent = <Loading/>;
     else {
         const pageJobs = pageJson.jobs;
-        // create timeline item for each job
-        content = pageJobs.map((job, index) => (
-            <div className='timeline-item' key={index}>
-
-                <div className='item-container'>
-                    <div className='item-title'>{job.company}</div>
-                    <div className='item-subtitle'>{job.title}</div>
-                    <div className='item-date'>{job.startDate} - {job.endDate}</div>
-                </div>
-                
-            </div>
-        ));
+        // create timeline for jobs
+        timelineContent = <Timeline data={pageJobs}/>
     }
 
     if (!pageJson) { // if page json hasn't been loaded
@@ -50,9 +41,7 @@ const WorkHistory = props => {
 
                 </div>
 
-                <div className='timeline' style={{ display: !pageJson ? 'none' : 'flex' }}>
-                    {content}
-                </div>
+                {timelineContent}
             </div>
 
         </div>

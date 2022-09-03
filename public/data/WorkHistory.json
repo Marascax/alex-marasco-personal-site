@@ -1,20 +1,20 @@
 {
     "jobs": [
         {
-            "company": "CoStar Group",
-            "title": "Software Engineer",
+            "title": "CoStar Group",
+            "subtitle": "Software Engineer",
             "startDate": "Apr 2022",
             "endDate": "Present"
         },
         {
-            "company": "CGI",
-            "title": "Software Developer",
+            "title": "CGI",
+            "subtitle": "Software Developer",
             "startDate": "Jun 2021",
             "endDate": "Apr 2022"
         },
         {
-            "company": "General Dynamics Information Technology",
-            "title": "Technical Intern",
+            "title": "General Dynamics Information Technology",
+            "subtitle": "Technical Intern",
             "startDate": "Jun 2020",
             "endDate": "May 2021"
         }        
