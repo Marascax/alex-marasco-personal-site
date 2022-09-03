@@ -43,11 +43,13 @@ const WorkHistory = props => {
             </div>
 
             <div className='work-history-content'>
+                
+                {timelineContent}
+
                 <div className='work-history-selection' style={{ display: !pageJson ? 'none' : 'block' }}>
 
                 </div>
-
-                {timelineContent}
+                
             </div>
 
         </div>
