@@ -14,11 +14,16 @@ const WorkHistory = props => {
     const [currSelect, setCurrSelection] = useState(null);
 
     let timelineContent;
+    let jobData = {};
     if (!pageJson) timelineContent = <Loading/>;
     else {
         const pageJobs = pageJson.jobs;
+
         // create timeline for jobs
-        timelineContent = <Timeline data={pageJobs} selectFunction={setCurrSelection}/>
+        timelineContent = <Timeline data={pageJobs} selectFunction={setCurrSelection}/>;
+
+        // load in the details of each job
+        pageJobs.forEach(job => jobData[job.id] = { ...job, details: [ ...job.details ] });
     }
 
     if (!pageJson) { // if page json hasn't been loaded
