@@ -1,7 +1,10 @@
 
 const TimelineItem = props => {
+
+    const id = props.id;
+
     return (
-        <div className='timeline-item'>
+        <div className='timeline-item' onClick={props.onClick ? () => props.onClick(id) : null}>
 
             <div className='item-container'>
                 <div className='item-title'>{props.title}</div>

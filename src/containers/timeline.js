@@ -7,6 +7,8 @@ const Timeline = props => {
     let content = timelineData.map((item, index) => (
         <TimelineItem 
             key={index} 
+            onClick={props.selectFunction}
+            id={item.id}
             title={item.title} 
             subtitle={item.subtitle} 
             startDate={item.startDate} 

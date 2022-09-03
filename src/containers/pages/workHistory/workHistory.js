@@ -11,13 +11,14 @@ const WorkHistory = props => {
     const context = useAppContext();
 
     const [pageJson, setPageJson] = useState(null);
+    const [currSelect, setCurrSelection] = useState(null);
 
     let timelineContent;
     if (!pageJson) timelineContent = <Loading/>;
     else {
         const pageJobs = pageJson.jobs;
         // create timeline for jobs
-        timelineContent = <Timeline data={pageJobs}/>
+        timelineContent = <Timeline data={pageJobs} selectFunction={setCurrSelection}/>
     }
 
     if (!pageJson) { // if page json hasn't been loaded
