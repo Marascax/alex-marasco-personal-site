@@ -50,7 +50,7 @@ const WorkHistory = props => {
 
                 </div>
 
-                <div className='timeline' style={{ display: !pageJson ? 'none' : 'block' }}>
+                <div className='timeline' style={{ display: !pageJson ? 'none' : 'flex' }}>
                     {content}
                 </div>
             </div>
