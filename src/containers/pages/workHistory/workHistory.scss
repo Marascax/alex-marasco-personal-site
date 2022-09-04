@@ -47,6 +47,8 @@
         font-weight: 400;
         opacity: 0.9;
 
+        animation: SlideRight 0.3s ease-out;
+
         @include media('<tablet') {
             display: none;
         }
@@ -80,6 +82,8 @@
     
             position: absolute;
             left: -14px;
+
+            animation: ScaleUp 0.8s ease-out;
         }
     }
     
@@ -97,6 +101,9 @@
         transform-origin: top left;
         transform: scale(1);
         transition: transform 100ms ease-out;
+
+        animation: SlideRight;
+        animation-timing-function: ease-out;
     
         cursor: pointer;
 
@@ -164,6 +171,14 @@
             }
         }
     }
+
+    @for $i from 1 through 3 {
+        // sets animation duration for each timeline-item incrementing by 0.1s
+        // durations range from 0.80s to 1s
+        .timeline-item:nth-child(#{$i}) {
+            animation-duration: calc(calc(#{$i} * 0.7s) + 0.1s);
+        }
+    }
 }
 
 .slideshow-history {
@@ -193,6 +208,7 @@
     box-sizing: border-box;
 
     margin-bottom: 1%;
+
 
     img {
         width: 100%;
