@@ -72,8 +72,12 @@ const WorkHistory = props => {
             </div>
 
             <div className='work-history-content'>
-                <div className='timeline-hint' style={{ display: !currSelection ? 'block' : 'none' }}>
+                <div className='timeline-hint'>
                     (Select Any Item Below for More Detail)
+                </div>
+
+                <div className='slideshow-history'>
+                    (Coming Soon)
                 </div>
                 
                 {timelineContent}

@@ -46,6 +46,10 @@
 
         font-weight: 400;
         opacity: 0.9;
+
+        @include media('<tablet') {
+            display: none;
+        }
     }
 
     .timeline {
@@ -61,6 +65,10 @@
         position: relative;
 
         margin-left: 2%;
+
+        @include media('<tablet') {
+            display: none;
+        }
     
         &::before {
             content: '';
@@ -126,7 +134,7 @@
                 width: 100%;
                 // height: 65%;
     
-                font-size: 2rem;
+                font-size: sass_clamp(360, 1.25, 2000, 2);
                 font-weight: 500;
                 text-align: left;
     
@@ -137,7 +145,7 @@
                 width: 100%;
                 // height: 20%;
     
-                font-size: 1.5rem;
+                font-size: sass_clamp(360, 1.25, 2000, 1.5);
                 font-weight: 400;
                 text-align: left;
     
@@ -148,13 +156,22 @@
                 width: 100%;
                 // height: 15%;
         
-                font-size: 1rem;
+                font-size: sass_clamp(360, 0.75, 2000, 1);
                 font-weight: 300;
                 text-align: left;
     
                 padding-bottom: 0.5%;
             }
         }
+    }
+}
+
+.slideshow-history {
+    width: 100%;
+    height: 100%;
+
+    @include media('>=tablet') {
+        display: none;
     }
 }
 
