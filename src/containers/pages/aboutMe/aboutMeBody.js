@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import CaretDown from "../../../components/caretDown";
 
+import Resume from '../../../assets/files/Alexander_Marasco_CV.pdf';
+
 const LANGUAGE_DROPDOWN = 0;
 const FRAMEWORKLIB_DROPDOWN = 1;
 const TOOL_DROPDOWN = 2;
@@ -97,7 +99,13 @@ const AboutMeBody = props => {
 
                 <div className='ContactInfo'>
 
-                    <h2>Contact Information</h2>
+                    <h2>Resume &amp; Contact Information</h2>
+
+                    <p className='Resume'>
+                        <a href={Resume} download='Alexander_Marasco_CV.pdf'>
+                            Download Resume
+                        </a>
+                    </p>
 
                     <p className='ContactInfoEmail'>
                         <a href={`mailto:${pageData.contactInfo.email}`}>{pageData.contactInfo.email}</a>

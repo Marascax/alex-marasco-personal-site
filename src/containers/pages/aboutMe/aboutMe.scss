@@ -208,7 +208,7 @@
         }
     }
 
-    .ContactInfoEmail, .ContactInfoPhone, .LinkedIn {
+    .Resume, .ContactInfoEmail, .ContactInfoPhone, .LinkedIn {
         font-size: sass_clamp(360, 0.8, 2000, 1.5);
 
         margin-top: 0;
@@ -221,28 +221,40 @@
         }
     }
 
-    .ContactInfoEmail {
-       animation-duration: 0.5s;
-
-       @include media('<desktop') {
+    .Resume {
+        animation-duration: 0.5s;
+ 
+        @include media('<desktop') {
             animation-duration: 0.65s;
+        }
+     }
+
+    .ContactInfoEmail {
+       animation-duration: 0.75s;
+
+        @include media('<desktop') {
+            animation-duration: 0.75s;
         }
     }
 
     .ContactInfoPhone {
-        animation-duration: 0.75s;
+        animation-duration: 1s;
+
+        @include media('<desktop') {
+            animation-duration: 0.85s;
+        }
     }
 
     .LinkedIn {
         margin: 0;
 
-        animation-duration: 1s;
+        animation-duration: 1.25s;
         animation-timing-function: ease-out;
         animation-name: AboutMeSlideLeft;
 
         @include media('<desktop') {
             animation-name: AboutMeSlideRight;
-            animation-duration: 0.85s;
+            animation-duration: 0.95s;
         }
     }
 
