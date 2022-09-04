@@ -175,10 +175,9 @@
     }
 
     @for $i from 1 through 3 {
-        // sets animation duration for each timeline-item incrementing by 0.1s
-        // durations range from 0.80s to 1s
+        // sets animation duration for each timeline-item incrementing by 0.7s
         .timeline-item:nth-child(#{$i}) {
-            animation-duration: calc(calc(#{$i} * 0.7s) + 0.1s);
+            animation-duration: calc(calc(#{$i} * 0.7s));
         }
     }
 }
