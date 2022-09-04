@@ -46,7 +46,7 @@ const Page = props => {
 
             { content }
 
-            <div className='DownArrow' onClick={() => context.scrollDown()} style={showArrow}>
+            <div className='DownArrow' onClick={() => context.scrollDown()} style={showArrow} title='Use This Button or The Scroll Wheel'>
                 <DownArrow width="100"/>
             </div>
     
