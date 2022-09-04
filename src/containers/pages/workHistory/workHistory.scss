@@ -23,6 +23,8 @@
 
     box-sizing: border-box;
 
+    position: relative;
+
     padding-left: 2%;
     padding-right: 2%;
 
@@ -35,6 +37,14 @@
         height: 90%;
 
         flex-direction: column;
+    }
+
+    .timeline-hint {
+        position: absolute;
+        top: 1%;
+
+        font-weight: 400;
+        opacity: 0.9;
     }
 
     .timeline {

@@ -29,7 +29,7 @@ const WorkHistory = props => {
 
     let selectionContent;
     // if there is data and a selection is made, get the selection's data
-    if (pageJson && currSelection) {
+    if (!!pageJson && !!currSelection) {
         let jobSelection = jobData[currSelection];
 
         selectionContent = (
@@ -72,11 +72,14 @@ const WorkHistory = props => {
             </div>
 
             <div className='work-history-content'>
+                <div className='timeline-hint' style={{ display: !currSelection ? 'block' : 'none' }}>
+                    (Select Any Item Below for More Detail)
+                </div>
                 
                 {timelineContent}
 
                 {selectionContent}
-                
+
             </div>
 
         </div>
