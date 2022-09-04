@@ -1,11 +1,12 @@
 {
     "jobs": [
         {
+            "id": 1,
             "title": "CoStar Group",
             "subtitle": "Software Engineer",
             "startDate": "Apr 2022",
             "endDate": "Present",
-            "id": 0,
+            "image": "https://images.ctfassets.net/bxvspbo2e7cv/5vo4dt2RN1hyYvLbcsnwR0/d65b08277f539d86cc46126d2786b5ec/png?",
             "details": [
                 "Supported integration team moving financial system from Microsoft Navision to Oracle Fusion Cloud Financials.",
                 "Developed proxy ASP.NET endpoints to interact with Oracle Fusion Cloud Financials API and Microsoft Navision web services.",
@@ -13,11 +14,12 @@
             ]
         },
         {
+            "id": 2,
             "title": "CGI",
             "subtitle": "Software Developer",
             "startDate": "Jun 2021",
             "endDate": "Apr 2022",
-            "id": 1,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/CGI_logo.svg/800px-CGI_logo.svg.png",
             "details": [
                 "Developed Microsoft Power Apps solution for government client including a C# codebase for plug-ins.",
                 "Provided technical support of enterprise-level application for government client focusing on defects, enhancements, and patches.",
@@ -26,11 +28,12 @@
             ]
         },
         {
+            "id": 3,
             "title": "General Dynamics Information Technology",
             "subtitle": "Technical Intern",
             "startDate": "Jun 2020",
             "endDate": "May 2021",
-            "id": 2,
+            "image": "https://trajectorymagazine.com/wp-content/uploads/2022/03/gdit_sht_lgtagline_pms_white-glc-cropped.png",
             "details": [
                 "Participated in all phases of the development lifecycle creating critical software solutions to support ongoing projects within GDIT.",
                 "Assessed feasibility and proposed development plans for potential projects.",

@@ -11,9 +11,9 @@ const WorkHistory = props => {
     const context = useAppContext();
 
     const [pageJson, setPageJson] = useState(null);
-    const [currSelect, setCurrSelection] = useState(null);
+    const [currSelection, setCurrSelection] = useState(null);
 
-    let timelineContent;
+    let timelineContent = null;
     let jobData = {};
     if (!pageJson) timelineContent = <Loading/>;
     else {
@@ -24,6 +24,35 @@ const WorkHistory = props => {
 
         // load in the details of each job
         pageJobs.forEach(job => jobData[job.id] = { ...job, details: [ ...job.details ] });
+    }
+
+
+    let selectionContent;
+    // if there is data and a selection is made, get the selection's data
+    if (pageJson && currSelection) {
+        let jobSelection = jobData[currSelection];
+
+        selectionContent = (
+            <div className='work-history-selection'>
+
+                <div className='job-image'>
+                    <img src={jobSelection.image} alt='Company Image'/>
+                </div>
+
+                <div className='job-details'>
+                    <ul className='job-details-list'>
+                        { 
+                            jobSelection.details.map((detail, index) => (
+                                <li className='job-details-list-item' key={index}>
+                                    {detail}
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+            </div>
+        );
     }
 
     if (!pageJson) { // if page json hasn't been loaded
@@ -46,9 +75,7 @@ const WorkHistory = props => {
                 
                 {timelineContent}
 
-                <div className='work-history-selection' style={{ display: !pageJson ? 'none' : 'block' }}>
-
-                </div>
+                {selectionContent}
                 
             </div>
 
