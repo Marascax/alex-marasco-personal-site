@@ -4,6 +4,7 @@ import Page from './page';
 import MainPage from './pages/mainPage/mainPage';
 import AboutMe from './pages/aboutMe/aboutMe';
 import Education from './pages/education/education';
+import WorkHistory from './pages/workHistory/workHistory';
 import { useAppContext } from '../lib/appContext';
 
 import './App.scss';
@@ -13,7 +14,7 @@ function App() {
     const appRef = useRef(null);
     const currPageIndex = useRef(0);
 
-    const pages = ['mainPage', 'aboutMe', 'education', 'page4'];
+    const pages = ['mainPage', 'aboutMe', 'education', 'workHistory'];
 
     const wheelHandler = e => {
         e.preventDefault();
@@ -64,7 +65,9 @@ function App() {
             <Page id='education'>
                 <Education/>
             </Page>
-            <Page id='page4'/>
+            <Page id='workHistory'>
+                <WorkHistory/>
+            </Page>
         </div>
     );
 }
