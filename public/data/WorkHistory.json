@@ -6,7 +6,7 @@
             "subtitle": "Software Engineer",
             "startDate": "Apr 2022",
             "endDate": "Present",
-            "image": "https://images.ctfassets.net/bxvspbo2e7cv/5vo4dt2RN1hyYvLbcsnwR0/d65b08277f539d86cc46126d2786b5ec/png?",
+            "image": "https://images.ctfassets.net/bxvspbo2e7cv/5vo4dt2RN1hyYvLbcsnwR0/d65b08277f539d86cc46126d2786b5ec/png",
             "details": [
                 "Supported integration team moving financial system from Microsoft Navision to Oracle Fusion Cloud Financials.",
                 "Developed proxy ASP.NET endpoints to interact with Oracle Fusion Cloud Financials API and Microsoft Navision web services.",

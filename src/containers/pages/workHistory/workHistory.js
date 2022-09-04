@@ -35,12 +35,13 @@ const WorkHistory = props => {
         selectionContent = (
             <div className='work-history-selection'>
 
-                <div className='job-image'>
+                {/* have key change on each selection to run css animation again */}
+                <div className='job-image' key={jobSelection.image}>
                     <img src={jobSelection.image} alt='Company Image'/>
                 </div>
 
                 <div className='job-details'>
-                    <ul className='job-details-list'>
+                    <ul className='job-details-list' key={jobSelection.image}>
                         { 
                             jobSelection.details.map((detail, index) => (
                                 <li className='job-details-list-item' key={index}>
