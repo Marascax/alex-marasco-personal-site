@@ -117,7 +117,7 @@ const AboutMeBody = props => {
 
                     <p className='LinkedIn'>
                         <a href={pageData.contactInfo.linkedIn}>
-                            <img className='Icon' src='./images/linkedin-icon.webp' alt='LinkedIn Icon'/>
+                            <img className='Icon' src={process.env.PUBLIC_URL + '/images/linkedin-icon.webp'} alt='LinkedIn Icon'/>
                         </a>
                     </p>
 

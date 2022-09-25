@@ -15,7 +15,7 @@ const MainPage = props => {
             <div className="MainPageContent">
 
                 <div className="SelfImage">
-                    <img src="images/Alex_Marasco.jpg"/>
+                    <img src={process.env.PUBLIC_URL + "/images/Alex_Marasco.jpg"}/>
                 </div>
 
                 <div className="WelcomeText">

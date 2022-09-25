@@ -16,7 +16,7 @@ const AboutMe = props => {
 
     if (!pageJson) { // if page json hasn't been loaded
         // fetch the doc
-        fetch('./data/AboutMe.json')
+        fetch(process.env.PUBLIC_URL + '/data/AboutMe.json')
             .then(response => response.json())
             .then(json => {
                 setPageJson(json);

@@ -58,7 +58,7 @@ const WorkHistory = props => {
 
     if (!pageJson) { // if page json hasn't been loaded
         // fetch the doc
-        fetch('./data/WorkHistory.json')
+        fetch(process.env.PUBLIC_URL + '/data/WorkHistory.json')
             .then(response => response.json())
             .then(json => {
                 setPageJson(json);
